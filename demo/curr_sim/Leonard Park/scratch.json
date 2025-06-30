@@ -1,0 +1,190 @@
+{
+    "name": "Leonard Park",
+    "first_name": "Leonard",
+    "last_name": "Park",
+    "age": 26,
+    "innate": "stimulation, hedonism, achievement",
+    "learned": "I am a chef at Baekjeong NYC. I love experimenting with new recipes and flavors.",
+    "currently": "I am working on creating a new menu for Baekjeong NYC.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Hospitality Enthusiasts",
+            "description": "A group of individuals working in the hospitality industry, sharing experiences and tips.",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "members": [
+                "Alex Jefferson",
+                "Chad Thompson",
+                "Leonard Park"
+            ],
+            "daily_activity": "discussing hospitality trends from 15:00 to 16:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:00",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Leonard Park's room at Courtyard New York Manhattan/Chelsea",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Leonard Park's room at Courtyard New York Manhattan/Chelsea",
+            "building": "Courtyard Marriot",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Baekjeong NYC",
+            "building": "Martinique New York on Broadway, Curio Collection by Hilton",
+            "start_time": "08:00:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:00",
+            "end_time": "09:30:00",
+            "start_place": "Baekjeong NYC",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "Research new recipes and flavors",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "09:30:00",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Fushimi Market",
+            "place": null,
+            "building": null,
+            "start_time": "12:00:00",
+            "end_time": "12:30:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "Fushimi Market"
+        },
+        {
+            "type": "main",
+            "activity": "Explore ingredients at Fushimi Market",
+            "place": "Fushimi Market",
+            "building": "838 6th Avenue #3",
+            "start_time": "12:30:00",
+            "end_time": "14:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Hilton Garden Inn New York/Manhattan-Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "14:00:00",
+            "end_time": "14:30:00",
+            "start_place": "Fushimi Market",
+            "end_place": "Hilton Garden Inn New York/Manhattan-Chelsea"
+        },
+        {
+            "type": "main",
+            "activity": "Discuss hospitality trends with Hospitality Enthusiasts",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "14:30:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Baekjeong NYC",
+            "place": null,
+            "building": null,
+            "start_time": "16:00:00",
+            "end_time": "16:30:00",
+            "start_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "end_place": "Baekjeong NYC"
+        },
+        {
+            "type": "main",
+            "activity": "Work on creating a new menu",
+            "place": "Baekjeong NYC",
+            "building": "Martinique New York on Broadway, Curio Collection by Hilton",
+            "start_time": "16:30:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "Baekjeong NYC",
+            "building": "Martinique New York on Broadway, Curio Collection by Hilton",
+            "start_time": "18:00:00",
+            "end_time": "19:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "19:00:00",
+            "end_time": "19:30:00",
+            "start_place": "Baekjeong NYC",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and enjoy entertainment",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "19:30:00",
+            "end_time": "21:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Leonard Park's room at Courtyard New York Manhattan/Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "21:00:00",
+            "end_time": "21:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Leonard Park's room at Courtyard New York Manhattan/Chelsea"
+        },
+        {
+            "type": "main",
+            "activity": "Wind down and prepare for sleep",
+            "place": "Leonard Park's room at Courtyard New York Manhattan/Chelsea",
+            "building": "Courtyard Marriot",
+            "start_time": "21:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "Baekjeong NYC",
+    "commute_plan": [
+        {
+            "goal_place": "CUNY School of Professional Studies | CUNY SPS",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [],
+    "current_vehicle": null,
+    "current_place": "CUNY School of Professional Studies | CUNY SPS",
+    "last_enter_bus_time": null
+}

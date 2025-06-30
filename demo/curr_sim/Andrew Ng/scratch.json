@@ -1,0 +1,201 @@
+{
+    "name": "Andrew Ng",
+    "first_name": "Andrew",
+    "last_name": "Ng",
+    "age": 48,
+    "innate": "self-direction, universalism, achievement",
+    "learned": "I am a computer scientist and entrepreneur, known for my work in artificial intelligence and online education. I co-founded Google Brain and Coursera.",
+    "currently": "I am exploring opportunities to collaborate with AI startups in New York City.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "AI Enthusiasts Club",
+            "description": "A group of enthusiasts and professionals discussing the latest in artificial intelligence.",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "members": [
+                "Andrew Ng",
+                "Elizabeth Mensah",
+                "Elon Musk",
+                "Joe Anderson"
+            ],
+            "daily_activity": "brainstorming tech ideas from 17:00 to 18:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:29",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Andrew Ng's room at Hilton Garden Inn New York/Manhattan-Chelsea",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Andrew Ng's room at Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Speedy's",
+            "building": "1271 Broadway",
+            "start_time": "08:00:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:00",
+            "end_time": "09:30:00",
+            "start_place": "Speedy's",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "Explore AI startup collaboration opportunities",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "09:30:00",
+            "end_time": "12:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to America Gourmet Food",
+            "place": null,
+            "building": null,
+            "start_time": "12:30:00",
+            "end_time": "13:00:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "America Gourmet Food"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "America Gourmet Food",
+            "building": "831 6th Avenue",
+            "start_time": "13:00:00",
+            "end_time": "14:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Empire State Building",
+            "place": null,
+            "building": null,
+            "start_time": "14:00:00",
+            "end_time": "14:30:00",
+            "start_place": "America Gourmet Food",
+            "end_place": "Empire State Building"
+        },
+        {
+            "type": "main",
+            "activity": "Visit Empire State Building",
+            "place": "Empire State Building",
+            "building": "Empire State Building",
+            "start_time": "14:30:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "16:00:00",
+            "end_time": "16:30:00",
+            "start_place": "Empire State Building",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "AI Enthusiasts Club brainstorming session",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "16:30:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to My Cooking Party",
+            "place": null,
+            "building": null,
+            "start_time": "18:00:00",
+            "end_time": "18:30:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "My Cooking Party"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "My Cooking Party",
+            "building": "130 West 29th Street 6th Floor",
+            "start_time": "18:30:00",
+            "end_time": "19:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "19:30:00",
+            "end_time": "20:00:00",
+            "start_place": "My Cooking Party",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and enjoy entertainment",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "20:00:00",
+            "end_time": "22:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to Hilton Garden Inn",
+            "place": null,
+            "building": null,
+            "start_time": "22:00:00",
+            "end_time": "22:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Andrew Ng's room at Hilton Garden Inn New York/Manhattan-Chelsea"
+        },
+        {
+            "type": "main",
+            "activity": "Prepare for next day and unwind",
+            "place": "Andrew Ng's room at Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "22:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": null,
+    "commute_plan": [
+        {
+            "goal_place": "CUNY School of Professional Studies | CUNY SPS",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [],
+    "current_vehicle": null,
+    "current_place": "CUNY School of Professional Studies | CUNY SPS",
+    "last_enter_bus_time": null
+}

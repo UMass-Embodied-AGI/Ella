@@ -1,0 +1,240 @@
+{
+    "name": "Louise Roberts",
+    "first_name": "Louise",
+    "last_name": "Roberts",
+    "age": 29,
+    "innate": "benevolence, universalism, self-direction",
+    "learned": "I am a librarian at United Hospital Fund-Ny Library. I enjoy reading and organizing community book clubs.",
+    "currently": "I am organizing a community reading event at the library.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Creative Minds",
+            "description": "A group of artists and creatives sharing their work and collaborating on projects.",
+            "place": "Creative Art Works",
+            "members": [
+                "Emily Johnson",
+                "James Thompson",
+                "Louise Roberts",
+                "Megan Carter"
+            ],
+            "daily_activity": "collaborating on art projects from 16:00 to 17:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:51:22",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Louise Roberts's room at E\u014cS NoMad Apartments",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Louise Roberts's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Speedy's",
+            "building": "1271 Broadway",
+            "start_time": "08:00:00",
+            "end_time": "08:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to United Hospital Fund-Ny Library",
+            "place": null,
+            "building": null,
+            "start_time": "08:30:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to United Hospital Fund-Ny Library",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:05",
+            "end_time": "09:15:05",
+            "start_place": "Louise Roberts's room at E\u014cS NoMad Apartments",
+            "end_place": "United Hospital Fund-Ny Library"
+        },
+        {
+            "type": "main",
+            "activity": "Organize community reading event",
+            "place": "United Hospital Fund-Ny Library",
+            "building": "Empire State Building",
+            "start_time": "09:15:05",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "STATE Grill and Bar",
+            "building": "Empire State Building",
+            "start_time": "12:00:00",
+            "end_time": "12:30:00"
+        },
+        {
+            "type": "main",
+            "activity": "Continue organizing community reading event",
+            "place": "United Hospital Fund-Ny Library",
+            "building": "Empire State Building",
+            "start_time": "12:30:00",
+            "end_time": "15:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "15:30:00",
+            "end_time": "16:00:00",
+            "start_place": "United Hospital Fund-Ny Library",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Collaborate on art projects with Creative Minds",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "16:00:00",
+            "end_time": "17:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Ikbal's Halal Food",
+            "place": null,
+            "building": null,
+            "start_time": "17:00:00",
+            "end_time": "17:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Ikbal's Halal Food"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "Ikbal's Halal Food",
+            "building": "Manhattan Mall",
+            "start_time": "17:30:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Louise Roberts's room at E\u014cS NoMad Apartments",
+            "place": null,
+            "building": null,
+            "start_time": "18:00:00",
+            "end_time": "18:30:00",
+            "start_place": "Ikbal's Halal Food",
+            "end_place": "Louise Roberts's room at E\u014cS NoMad Apartments"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and personal time",
+            "place": "Louise Roberts's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "18:30:00",
+            "end_time": "23:30:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Light snack",
+            "place": "Louise Roberts's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "23:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "United Hospital Fund-Ny Library",
+    "commute_plan": [
+        {
+            "goal_place": "United Hospital Fund-Ny Library",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [
+        {
+            "time": "October 01, 2024, 11:48:54",
+            "subject": "person_106",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I think incorporating self-defense techniques into the mural is a fascinating idea! We could use motion sensors to trigger animations or sounds related to those techniques. Let's brainstorm how we can integrate that with the local cultural stories and AI tools."
+        },
+        {
+            "time": "October 01, 2024, 11:48:55",
+            "subject": "person_86",
+            "pos": [
+                1502.6563692334182,
+                1501.8836602047545,
+                -49.0
+            ],
+            "content": "Louise, I love the idea of using personal stories to inspire the visuals and lighting effects. How can we incorporate elements from the school's spirit and marathon themes to enhance this storytelling experience?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:56",
+            "subject": "Louise Roberts",
+            "pos": [
+                1500.9124755859375,
+                1499.7125244140625,
+                -50.0
+            ],
+            "content": "I think we can use quotes from marathon runners and musicians to create a narrative that ties in with the school's spirit. Maybe we can also incorporate some interactive elements that reflect the energy and resilience of these stories."
+        },
+        {
+            "time": "October 01, 2024, 11:48:57",
+            "subject": "person_120",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -49.0
+            ],
+            "content": "That's a great idea, person_108! How about we brainstorm some specific quotes and interactive elements that could really capture the energy and resilience you're talking about?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:58",
+            "subject": "person_106",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I love the idea of using quotes from marathon runners and musicians! Maybe we can also think about incorporating some visual elements that represent different stages of resilience. What do you think about using the school's colors and mascot to tie everything together?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:59",
+            "subject": "person_120",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -49.0
+            ],
+            "content": "I think incorporating the school's colors and mascot is a fantastic idea, girl_110! Maybe we can also explore how to integrate self-defense techniques into the visual elements to symbolize strength and resilience. What do you think?"
+        }
+    ],
+    "current_vehicle": null,
+    "current_place": "United Hospital Fund-Ny Library",
+    "last_enter_bus_time": null
+}

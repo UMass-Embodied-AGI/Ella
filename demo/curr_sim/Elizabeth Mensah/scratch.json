@@ -1,0 +1,260 @@
+{
+    "name": "Elizabeth Mensah",
+    "first_name": "Elizabeth",
+    "last_name": "Mensah",
+    "age": 23,
+    "innate": "benevolence, universalism, self-direction",
+    "learned": "I am a student at CUNY School of Professional Studies | CUNY SPS, studying information science. I enjoy coding and participating in hackathons.",
+    "currently": "I am working on developing a new app for Idea Nuova Inc.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "AI Enthusiasts Club",
+            "description": "A group of enthusiasts and professionals discussing the latest in artificial intelligence.",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "members": [
+                "Andrew Ng",
+                "Elizabeth Mensah",
+                "Elon Musk",
+                "Joe Anderson"
+            ],
+            "daily_activity": "brainstorming tech ideas from 17:00 to 18:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:00",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Elizabeth Mensah's room at MACY 31 Self Serviced Apartments",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Elizabeth Mensah's room at MACY 31 Self Serviced Apartments",
+            "building": "The Grand Hotel",
+            "start_time": "00:00:00",
+            "end_time": "08:30:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Elizabeth Mensah's room at MACY 31 Self Serviced Apartments",
+            "building": "The Grand Hotel",
+            "start_time": "08:30:00",
+            "end_time": "09:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "09:30:00",
+            "end_time": "10:00:00",
+            "start_place": "Fushimi Market",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "Taking classes at CUNY School of Professional Studies",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "10:00:00",
+            "end_time": "11:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Baskin-Robbins",
+            "place": null,
+            "building": null,
+            "start_time": "11:30:00",
+            "end_time": "11:40:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "Baskin-Robbins"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Baskin-Robbins",
+            "place": null,
+            "building": null,
+            "start_time": "11:40:00",
+            "end_time": "11:55:00",
+            "start_place": null,
+            "end_place": "Baskin-Robbins"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "Baskin-Robbins",
+            "building": "302 5th Avenue",
+            "start_time": "11:55:00",
+            "end_time": "12:40:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Fresh and Snacks Store",
+            "place": null,
+            "building": null,
+            "start_time": "12:40:00",
+            "end_time": "13:00:00",
+            "start_place": "Baskin-Robbins",
+            "end_place": "Fresh and Snacks Store"
+        },
+        {
+            "type": "main",
+            "activity": "Shopping for fresh produce and snacks",
+            "place": "Fresh and Snacks Store",
+            "building": "1261 Broadway Floor 11",
+            "start_time": "13:00:00",
+            "end_time": "13:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Arrive",
+            "place": null,
+            "building": null,
+            "start_time": "13:30:00",
+            "end_time": "14:00:00",
+            "start_place": "Fresh and Snacks Store",
+            "end_place": "Arrive"
+        },
+        {
+            "type": "main",
+            "activity": "Training and relaxation session at Arrive",
+            "place": "Arrive",
+            "building": "129 West 29th Street Second Floor",
+            "start_time": "14:00:00",
+            "end_time": "16:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "16:30:00",
+            "end_time": "17:00:00",
+            "start_place": "Arrive",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "Participate in AI Enthusiasts Club brainstorming session",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "17:00:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Up on 20 Rooftop Lounge",
+            "place": null,
+            "building": null,
+            "start_time": "18:00:00",
+            "end_time": "18:10:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "Up on 20 Rooftop Lounge"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "Up on 20 Rooftop Lounge",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "18:10:00",
+            "end_time": "19:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "19:00:00",
+            "end_time": "19:30:00",
+            "start_place": "Up on 20 Rooftop Lounge",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and enjoy entertainment at Creative Art Works",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "19:30:00",
+            "end_time": "21:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to Elizabeth Mensah's room",
+            "place": null,
+            "building": null,
+            "start_time": "21:00:00",
+            "end_time": "21:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Elizabeth Mensah's room at MACY 31 Self Serviced Apartments"
+        },
+        {
+            "type": "main",
+            "activity": "Personal time and relaxation",
+            "place": "Elizabeth Mensah's room at MACY 31 Self Serviced Apartments",
+            "building": "The Grand Hotel",
+            "start_time": "21:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "CUNY School of Professional Studies | CUNY SPS",
+    "commute_plan": [
+        {
+            "goal_place": "Baskin-Robbins",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [
+        {
+            "time": "October 01, 2024, 11:48:56",
+            "subject": "sit_191",
+            "pos": [
+                1500.9124755859375,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I think we can use quotes from marathon runners and musicians to create a narrative that ties in with the school's spirit. Maybe we can also incorporate some interactive elements that reflect the energy and resilience of these stories."
+        },
+        {
+            "time": "October 01, 2024, 11:48:57",
+            "subject": "person_189",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -49.0
+            ],
+            "content": "That's a great idea, person_108! How about we brainstorm some specific quotes and interactive elements that could really capture the energy and resilience you're talking about?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:58",
+            "subject": "Elizabeth Mensah",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -50.0
+            ],
+            "content": "I love the idea of using quotes from marathon runners and musicians! Maybe we can also think about incorporating some visual elements that represent different stages of resilience. What do you think about using the school's colors and mascot to tie everything together?"
+        }
+    ],
+    "current_vehicle": null,
+    "current_place": "Baskin-Robbins",
+    "last_enter_bus_time": null
+}

@@ -1,0 +1,248 @@
+{
+    "name": "Roth Miller",
+    "first_name": "Roth",
+    "last_name": "Miller",
+    "age": 26,
+    "innate": "achievement, self-direction, stimulation",
+    "learned": "I am a fitness trainer at Arrive. I enjoy running marathons and helping others achieve their fitness goals.",
+    "currently": "I am training for the New York City Marathon.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Celebrity Circle",
+            "description": "A group of famous personalities networking and discussing their latest projects.",
+            "place": "Empire State Building",
+            "members": [
+                "Emma Watson",
+                "Lionel Messi",
+                "Roth Miller",
+                "Taylor Swift"
+            ],
+            "daily_activity": "networking and discussing projects from 17:00 to 18:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:48:59",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Roth Miller's room at MACY 31 Self Serviced Apartments",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Roth Miller's room at MACY 31 Self Serviced Apartments",
+            "building": "The Grand Hotel",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Beverages and Snacks Store",
+            "building": "The Grand Hotel",
+            "start_time": "08:00:00",
+            "end_time": "08:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Arrive",
+            "place": null,
+            "building": null,
+            "start_time": "08:30:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Arrive",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:04",
+            "end_time": "09:15:04",
+            "start_place": "Roth Miller's room at MACY 31 Self Serviced Apartments",
+            "end_place": "Arrive"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Arrive",
+            "place": null,
+            "building": null,
+            "start_time": "09:15:04",
+            "end_time": "09:30:04",
+            "start_place": null,
+            "end_place": "Arrive"
+        },
+        {
+            "type": "main",
+            "activity": "Training session at Arrive",
+            "place": "Arrive",
+            "building": "129 West 29th Street Second Floor",
+            "start_time": "09:30:04",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "12:00:00",
+            "end_time": "12:30:00",
+            "start_place": "Arrive",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "Research and study at CUNY SPS",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "12:30:00",
+            "end_time": "14:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Ayza Wine & Chocolate Bar",
+            "place": null,
+            "building": null,
+            "start_time": "14:00:00",
+            "end_time": "14:30:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "Ayza Wine & Chocolate Bar"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "Ayza Wine & Chocolate Bar",
+            "building": "Life Hotel",
+            "start_time": "14:30:00",
+            "end_time": "15:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Empire State Building",
+            "place": null,
+            "building": null,
+            "start_time": "15:00:00",
+            "end_time": "15:30:00",
+            "start_place": "Ayza Wine & Chocolate Bar",
+            "end_place": "Empire State Building"
+        },
+        {
+            "type": "main",
+            "activity": "Networking at Celebrity Circle",
+            "place": "Empire State Building",
+            "building": "Empire State Building",
+            "start_time": "15:30:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "STATE Grill and Bar",
+            "building": "Empire State Building",
+            "start_time": "18:00:00",
+            "end_time": "19:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "19:00:00",
+            "end_time": "19:30:00",
+            "start_place": "STATE Grill and Bar",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and enjoy art",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "19:30:00",
+            "end_time": "21:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Up on 20 Rooftop Lounge",
+            "place": null,
+            "building": null,
+            "start_time": "21:00:00",
+            "end_time": "21:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Up on 20 Rooftop Lounge"
+        },
+        {
+            "type": "meal",
+            "activity": "Evening snack",
+            "place": "Up on 20 Rooftop Lounge",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "21:30:00",
+            "end_time": "22:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to Roth Miller's room",
+            "place": null,
+            "building": null,
+            "start_time": "22:00:00",
+            "end_time": "22:30:00",
+            "start_place": "Up on 20 Rooftop Lounge",
+            "end_place": "Roth Miller's room at MACY 31 Self Serviced Apartments"
+        },
+        {
+            "type": "main",
+            "activity": "Wind down and prepare for bed",
+            "place": "Roth Miller's room at MACY 31 Self Serviced Apartments",
+            "building": "The Grand Hotel",
+            "start_time": "22:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "Arrive",
+    "commute_plan": [
+        {
+            "goal_place": "Arrive",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [
+        {
+            "time": "October 01, 2024, 11:48:55",
+            "subject": "person_123",
+            "pos": [
+                1502.6563692334182,
+                1501.8836602047545,
+                -49.0
+            ],
+            "content": "Louise, I love the idea of using personal stories to inspire the visuals and lighting effects. How can we incorporate elements from the school's spirit and marathon themes to enhance this storytelling experience?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:57",
+            "subject": "Roth Miller",
+            "pos": [
+                1503.7322028320634,
+                1502.9021854261662,
+                -50.0
+            ],
+            "content": "I think we could use the school's colors and symbols to create a visual narrative that aligns with the marathon's journey. Maybe we can also incorporate quotes from 'Born to Run' to tie it all together?"
+        }
+    ],
+    "current_vehicle": null,
+    "current_place": "Arrive",
+    "last_enter_bus_time": null
+}

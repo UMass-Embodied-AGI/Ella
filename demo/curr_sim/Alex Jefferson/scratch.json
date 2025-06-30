@@ -1,0 +1,216 @@
+{
+    "name": "Alex Jefferson",
+    "first_name": "Alex",
+    "last_name": "Jefferson",
+    "age": 30,
+    "innate": "achievement, security, conformity",
+    "learned": "I am a hotel manager at the Hilton Garden Inn New York/Manhattan-Chelsea. I enjoy reading mystery novels and hiking during my free time.",
+    "currently": "I am focused on improving guest satisfaction scores at the Hilton Garden Inn.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Hospitality Enthusiasts",
+            "description": "A group of individuals working in the hospitality industry, sharing experiences and tips.",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "members": [
+                "Alex Jefferson",
+                "Chad Thompson",
+                "Leonard Park"
+            ],
+            "daily_activity": "discussing hospitality trends from 15:00 to 16:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:29",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Alex Jefferson's room at E\u014cS NoMad Apartments",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Alex Jefferson's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Speedy's",
+            "building": "1271 Broadway",
+            "start_time": "08:00:00",
+            "end_time": "08:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Hilton Garden Inn New York/Manhattan-Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "08:30:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Hilton Garden Inn New York/Manhattan-Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:04",
+            "end_time": "09:15:04",
+            "start_place": "Alex Jefferson's room at E\u014cS NoMad Apartments",
+            "end_place": "Hilton Garden Inn New York/Manhattan-Chelsea"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Hilton Garden Inn New York/Manhattan-Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "09:15:04",
+            "end_time": "09:30:04",
+            "start_place": null,
+            "end_place": "Hilton Garden Inn New York/Manhattan-Chelsea"
+        },
+        {
+            "type": "main",
+            "activity": "Work on improving guest satisfaction scores",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "09:30:04",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Black Burger",
+            "place": null,
+            "building": null,
+            "start_time": "12:00:00",
+            "end_time": "12:10:00",
+            "start_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "end_place": "Black Burger"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "Black Burger",
+            "building": "65 West 30th Street",
+            "start_time": "12:10:00",
+            "end_time": "12:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to Hilton Garden Inn New York/Manhattan-Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "12:30:00",
+            "end_time": "13:00:00",
+            "start_place": "Black Burger",
+            "end_place": "Hilton Garden Inn New York/Manhattan-Chelsea"
+        },
+        {
+            "type": "main",
+            "activity": "Continue working on guest satisfaction initiatives",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "13:00:00",
+            "end_time": "15:00:00"
+        },
+        {
+            "type": "main",
+            "activity": "Discuss hospitality trends with Hospitality Enthusiasts group",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "15:00:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "type": "main",
+            "activity": "Read mystery novel",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "16:00:00",
+            "end_time": "17:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to L'Amico for dinner",
+            "place": null,
+            "building": null,
+            "start_time": "17:30:00",
+            "end_time": "18:00:00",
+            "start_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "end_place": "L'Amico"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "L'Amico",
+            "building": "Eventi",
+            "start_time": "18:00:00",
+            "end_time": "18:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "18:30:00",
+            "end_time": "19:00:00",
+            "start_place": "L'Amico",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Enjoy entertainment at Creative Art Works",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "19:00:00",
+            "end_time": "21:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to Alex Jefferson's room at E\u014cS NoMad Apartments",
+            "place": null,
+            "building": null,
+            "start_time": "21:00:00",
+            "end_time": "21:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Alex Jefferson's room at E\u014cS NoMad Apartments"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and prepare for bed",
+            "place": "Alex Jefferson's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "21:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+    "commute_plan": [
+        {
+            "goal_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [],
+    "current_vehicle": null,
+    "current_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+    "last_enter_bus_time": null
+}

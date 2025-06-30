@@ -1,0 +1,207 @@
+{
+    "name": "Emma Watson",
+    "first_name": "Emma",
+    "last_name": "Watson",
+    "age": 34,
+    "innate": "universalism, benevolence, self-direction",
+    "learned": "I am an actress and activist, known for my role as Hermione Granger in the Harry Potter film series and my work in promoting gender equality.",
+    "currently": "I am attending a film premiere in New York City.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Celebrity Circle",
+            "description": "A group of famous personalities networking and discussing their latest projects.",
+            "place": "Empire State Building",
+            "members": [
+                "Emma Watson",
+                "Lionel Messi",
+                "Roth Miller",
+                "Taylor Swift"
+            ],
+            "daily_activity": "networking and discussing projects from 17:00 to 18:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:23",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Emma Watson's room at Kimpton Hotel Eventi",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Emma Watson's room at Kimpton Hotel Eventi",
+            "building": "Eventi",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "L'Amico",
+            "building": "Eventi",
+            "start_time": "08:00:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to CUNY School of Professional Studies",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:00",
+            "end_time": "09:30:00",
+            "start_place": "L'Amico",
+            "end_place": "CUNY School of Professional Studies | CUNY SPS"
+        },
+        {
+            "type": "main",
+            "activity": "Visit CUNY School of Professional Studies",
+            "place": "CUNY School of Professional Studies | CUNY SPS",
+            "building": "119 West 31st Street",
+            "start_time": "09:30:00",
+            "end_time": "11:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "11:30:00",
+            "end_time": "12:00:00",
+            "start_place": "CUNY School of Professional Studies | CUNY SPS",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Visit Creative Art Works",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "12:00:00",
+            "end_time": "14:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Osamil for lunch",
+            "place": null,
+            "building": null,
+            "start_time": "14:00:00",
+            "end_time": "14:15:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Osamil"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "Osamil",
+            "building": "5 West 31st Street",
+            "start_time": "14:15:00",
+            "end_time": "15:15:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Fresh and Beverages Store",
+            "place": null,
+            "building": null,
+            "start_time": "15:15:00",
+            "end_time": "15:30:00",
+            "start_place": "Osamil",
+            "end_place": "Fresh and Beverages Store"
+        },
+        {
+            "type": "main",
+            "activity": "Visit Fresh and Beverages Store",
+            "place": "Fresh and Beverages Store",
+            "building": "312 5th Avenue #7",
+            "start_time": "15:30:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Empire State Building",
+            "place": null,
+            "building": null,
+            "start_time": "16:00:00",
+            "end_time": "16:30:00",
+            "start_place": "Fresh and Beverages Store",
+            "end_place": "Empire State Building"
+        },
+        {
+            "type": "main",
+            "activity": "Networking and discussing projects with Celebrity Circle",
+            "place": "Empire State Building",
+            "building": "Empire State Building",
+            "start_time": "16:30:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "STATE Grill and Bar",
+            "building": "Empire State Building",
+            "start_time": "18:00:00",
+            "end_time": "19:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to Kimpton Hotel Eventi",
+            "place": null,
+            "building": null,
+            "start_time": "19:00:00",
+            "end_time": "19:30:00",
+            "start_place": "STATE Grill and Bar",
+            "end_place": "Big Screen Plaza"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and unwind at Big Screen Plaza",
+            "place": "Big Screen Plaza",
+            "building": "Eventi",
+            "start_time": "19:30:00",
+            "end_time": "22:00:00"
+        },
+        {
+            "type": "main",
+            "activity": "Prepare for bed",
+            "place": "Emma Watson's room at Kimpton Hotel Eventi",
+            "building": "Eventi",
+            "start_time": "22:00:00",
+            "end_time": "23:00:00"
+        },
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Emma Watson's room at Kimpton Hotel Eventi",
+            "building": "Eventi",
+            "start_time": "23:00:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": null,
+    "commute_plan": [
+        {
+            "goal_place": "Creative Art Works",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [],
+    "current_vehicle": null,
+    "current_place": "Creative Art Works",
+    "last_enter_bus_time": null
+}

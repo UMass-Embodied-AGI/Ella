@@ -1,0 +1,362 @@
+{
+    "name": "James Thompson",
+    "first_name": "James",
+    "last_name": "Thompson",
+    "age": 24,
+    "innate": "stimulation, achievement, self-direction",
+    "learned": "I am a martial arts instructor at NYC Kali Escrima Filipino Martial Arts. I enjoy teaching self-defense techniques and staying physically fit. In my free time, I like exploring new restaurants and trying different cuisines.",
+    "currently": "I want to develop a new self-defense workshop for beginners at NYC Kali Escrima Filipino Martial Arts.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Creative Minds",
+            "description": "A group of artists and creatives sharing their work and collaborating on projects.",
+            "place": "Creative Art Works",
+            "members": [
+                "Emily Johnson",
+                "James Thompson",
+                "Louise Roberts",
+                "Megan Carter"
+            ],
+            "daily_activity": "collaborating on art projects from 16:00 to 17:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:01",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "James Thompson's room at E\u014cS NoMad Apartments",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "James Thompson's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Ikbal's Halal Food",
+            "building": "Manhattan Mall",
+            "start_time": "08:30:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to NYC Kali Escrima Filipino Martial Arts",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:00",
+            "end_time": "09:30:00",
+            "start_place": "Ikbal's Halal Food",
+            "end_place": "NYC Kali Escrima Filipino Martial Arts"
+        },
+        {
+            "type": "main",
+            "activity": "Teach martial arts class",
+            "place": "NYC Kali Escrima Filipino Martial Arts",
+            "building": "115 West 28th Street 1st floor",
+            "start_time": "09:30:00",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Fresh and Snacks Store",
+            "place": null,
+            "building": null,
+            "start_time": "12:00:00",
+            "end_time": "12:15:00",
+            "start_place": "NYC Kali Escrima Filipino Martial Arts",
+            "end_place": "Fresh and Snacks Store"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "Fresh and Snacks Store",
+            "building": "1261 Broadway Floor 11",
+            "start_time": "12:15:00",
+            "end_time": "12:45:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to NYC Kali Escrima Filipino Martial Arts",
+            "place": null,
+            "building": null,
+            "start_time": "12:45:00",
+            "end_time": "13:00:00",
+            "start_place": "Fresh and Snacks Store",
+            "end_place": "NYC Kali Escrima Filipino Martial Arts"
+        },
+        {
+            "type": "main",
+            "activity": "Develop new self-defense workshop",
+            "place": "NYC Kali Escrima Filipino Martial Arts",
+            "building": "115 West 28th Street 1st floor",
+            "start_time": "13:00:00",
+            "end_time": "15:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "15:30:00",
+            "end_time": "16:00:00",
+            "start_place": "NYC Kali Escrima Filipino Martial Arts",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Collaborate on art projects with Creative Minds",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "16:00:00",
+            "end_time": "17:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Baekjeong NYC",
+            "place": null,
+            "building": null,
+            "start_time": "17:00:00",
+            "end_time": "17:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Baekjeong NYC"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "Baekjeong NYC",
+            "building": "Martinique New York on Broadway, Curio Collection by Hilton",
+            "start_time": "17:30:00",
+            "end_time": "18:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Empire State Building",
+            "place": null,
+            "building": null,
+            "start_time": "18:30:00",
+            "end_time": "19:00:00",
+            "start_place": "Baekjeong NYC",
+            "end_place": "Empire State Building"
+        },
+        {
+            "type": "main",
+            "activity": "Visit Empire State Building",
+            "place": "Empire State Building",
+            "building": "Empire State Building",
+            "start_time": "19:00:00",
+            "end_time": "21:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to James Thompson's room at E\u014cS NoMad Apartments",
+            "place": null,
+            "building": null,
+            "start_time": "21:00:00",
+            "end_time": "21:30:00",
+            "start_place": "Empire State Building",
+            "end_place": "James Thompson's room at E\u014cS NoMad Apartments"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and unwind",
+            "place": "James Thompson's room at E\u014cS NoMad Apartments",
+            "building": "EOS",
+            "start_time": "21:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "NYC Kali Escrima Filipino Martial Arts",
+    "commute_plan": [
+        {
+            "goal_place": "NYC Kali Escrima Filipino Martial Arts",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [
+        {
+            "time": "October 01, 2024, 11:48:36",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I really like the idea of combining musical symbols with marathon motifs and motion sensors. Maybe we can also explore how AI tools can help us analyze and enhance these themes for the mural. What do you think?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:37",
+            "subject": "James Thompson",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -50.0
+            ],
+            "content": "I think using AI tools to enhance the mural's themes is a brilliant idea. We could explore how they can help us create dynamic interactions with the motion sensors and musical elements. Let's plan a session at Creative Art Works to brainstorm more on this."
+        },
+        {
+            "time": "October 01, 2024, 11:48:38",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "That sounds exciting! I'd love to join the brainstorming session at Creative Art Works. Let me know when it's planned."
+        },
+        {
+            "time": "October 01, 2024, 11:48:41",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "That sounds great, person_187! I can bring some AI tools to our session at Creative Art Works to see how they can enhance your sketches and the overall mural experience."
+        },
+        {
+            "time": "October 01, 2024, 11:48:43",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "That sounds fantastic, person_99! I love the idea of using your drawings with vibrant colors and motion sensors. Let's definitely meet at Creative Art Works later to bring all our ideas together and see how we can make this mural truly come alive with AI and music. I'll make sure to bring some quotes from 'Born to Run' and a few of my favorite guitar riffs to inspire us. Looking forward to it!"
+        },
+        {
+            "time": "October 01, 2024, 11:48:45",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "How about we incorporate some local cultural stories into the mural and use AI to create interactive elements that respond to the community's favorite music genres?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:48",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I think incorporating your drawings with local cultural stories is a brilliant idea! Let's explore how AI can make them interactive and engaging. I'm excited to see how we can blend these elements at Creative Art Works later."
+        },
+        {
+            "time": "October 01, 2024, 11:48:49",
+            "subject": "James Thompson",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -50.0
+            ],
+            "content": "I love the idea of using AI to make the mural interactive! Maybe we can also think about incorporating some self-defense techniques into the design to add a unique twist. What do you think?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:50",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "That's an intriguing idea, person_120! Incorporating self-defense techniques into the mural design could add a fascinating layer. Let's brainstorm how we can visually represent those techniques and make them interactive with AI. I'm excited to see how this could enhance the overall experience."
+        },
+        {
+            "time": "October 01, 2024, 11:48:53",
+            "subject": "James Thompson",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -50.0
+            ],
+            "content": "How about we sketch some initial ideas for the mural at Creative Art Works later today? We can explore how to visually represent self-defense techniques and make them interactive with AI."
+        },
+        {
+            "time": "October 01, 2024, 11:48:54",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I think incorporating self-defense techniques into the mural is a fascinating idea! We could use motion sensors to trigger animations or sounds related to those techniques. Let's brainstorm how we can integrate that with the local cultural stories and AI tools."
+        },
+        {
+            "time": "October 01, 2024, 11:48:55",
+            "subject": "person_77",
+            "pos": [
+                1502.6563692334182,
+                1501.8836602047545,
+                -49.0
+            ],
+            "content": "Louise, I love the idea of using personal stories to inspire the visuals and lighting effects. How can we incorporate elements from the school's spirit and marathon themes to enhance this storytelling experience?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:56",
+            "subject": "person_108",
+            "pos": [
+                1500.9124755859375,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I think we can use quotes from marathon runners and musicians to create a narrative that ties in with the school's spirit. Maybe we can also incorporate some interactive elements that reflect the energy and resilience of these stories."
+        },
+        {
+            "time": "October 01, 2024, 11:48:57",
+            "subject": "James Thompson",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -50.0
+            ],
+            "content": "That's a great idea, person_108! How about we brainstorm some specific quotes and interactive elements that could really capture the energy and resilience you're talking about?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:58",
+            "subject": "girl_110",
+            "pos": [
+                1500.112548828125,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I love the idea of using quotes from marathon runners and musicians! Maybe we can also think about incorporating some visual elements that represent different stages of resilience. What do you think about using the school's colors and mascot to tie everything together?"
+        },
+        {
+            "time": "October 01, 2024, 11:48:59",
+            "subject": "James Thompson",
+            "pos": [
+                1499.7125244140625,
+                1498.9124755859375,
+                -50.0
+            ],
+            "content": "I think incorporating the school's colors and mascot is a fantastic idea, girl_110! Maybe we can also explore how to integrate self-defense techniques into the visual elements to symbolize strength and resilience. What do you think?"
+        }
+    ],
+    "current_vehicle": null,
+    "current_place": "NYC Kali Escrima Filipino Martial Arts",
+    "last_enter_bus_time": null
+}

@@ -1,0 +1,227 @@
+{
+    "name": "Chad Thompson",
+    "first_name": "Chad",
+    "last_name": "Thompson",
+    "age": 28,
+    "innate": "stimulation, hedonism, achievement",
+    "learned": "I am a bartender at Chorus Karaoke. I love playing the guitar and attending live music events.",
+    "currently": "I am working on creating a signature cocktail for Chorus Karaoke.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Hospitality Enthusiasts",
+            "description": "A group of individuals working in the hospitality industry, sharing experiences and tips.",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "members": [
+                "Alex Jefferson",
+                "Chad Thompson",
+                "Leonard Park"
+            ],
+            "daily_activity": "discussing hospitality trends from 15:00 to 16:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:26",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Chad Thompson's room at Furnished Quarters",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Chad Thompson's room at Furnished Quarters",
+            "building": "Tower 31",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "E-MO",
+            "building": "2 West 32nd Street",
+            "start_time": "08:00:00",
+            "end_time": "08:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Chorus Karaoke",
+            "place": null,
+            "building": null,
+            "start_time": "08:30:00",
+            "end_time": "08:45:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Chorus Karaoke",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:02",
+            "end_time": "09:15:02",
+            "start_place": "Chad Thompson's room at Furnished Quarters",
+            "end_place": "Chorus Karaoke"
+        },
+        {
+            "type": "main",
+            "activity": "Work on creating a signature cocktail",
+            "place": "Chorus Karaoke",
+            "building": "25 West 32nd Street",
+            "start_time": "09:15:02",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Fresh and Snacks Store",
+            "place": null,
+            "building": null,
+            "start_time": "12:00:00",
+            "end_time": "12:15:00",
+            "start_place": "Chorus Karaoke",
+            "end_place": "Fresh and Snacks Store"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "Fresh and Snacks Store",
+            "building": "1261 Broadway Floor 11",
+            "start_time": "12:15:00",
+            "end_time": "12:45:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Hilton Garden Inn New York/Manhattan-Chelsea",
+            "place": null,
+            "building": null,
+            "start_time": "12:45:00",
+            "end_time": "13:00:00",
+            "start_place": "Fresh and Snacks Store",
+            "end_place": "Hilton Garden Inn New York/Manhattan-Chelsea"
+        },
+        {
+            "type": "main",
+            "activity": "Prepare for Hospitality Enthusiasts meeting",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "13:00:00",
+            "end_time": "15:00:00"
+        },
+        {
+            "type": "main",
+            "activity": "Discuss hospitality trends with Hospitality Enthusiasts",
+            "place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "building": "Hilton Garden Inn",
+            "start_time": "15:00:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "16:00:00",
+            "end_time": "16:15:00",
+            "start_place": "Hilton Garden Inn New York/Manhattan-Chelsea",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Play guitar and enjoy art",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "16:15:00",
+            "end_time": "17:45:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to E-MO",
+            "place": null,
+            "building": null,
+            "start_time": "17:45:00",
+            "end_time": "18:00:00",
+            "start_place": "Creative Art Works",
+            "end_place": "E-MO"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "E-MO",
+            "building": "2 West 32nd Street",
+            "start_time": "18:00:00",
+            "end_time": "18:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Empire State Building",
+            "place": null,
+            "building": null,
+            "start_time": "18:30:00",
+            "end_time": "18:45:00",
+            "start_place": "E-MO",
+            "end_place": "Empire State Building"
+        },
+        {
+            "type": "main",
+            "activity": "Attend live music event",
+            "place": "Empire State Building",
+            "building": "Empire State Building",
+            "start_time": "18:45:00",
+            "end_time": "22:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Chad Thompson's room at Furnished Quarters",
+            "place": null,
+            "building": null,
+            "start_time": "22:00:00",
+            "end_time": "22:15:00",
+            "start_place": "Empire State Building",
+            "end_place": "Chad Thompson's room at Furnished Quarters"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and unwind",
+            "place": "Chad Thompson's room at Furnished Quarters",
+            "building": "Tower 31",
+            "start_time": "22:15:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": "Chorus Karaoke",
+    "commute_plan": [
+        {
+            "goal_place": "Chorus Karaoke",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [
+        {
+            "time": "October 01, 2024, 11:48:56",
+            "subject": "person_85",
+            "pos": [
+                1500.9124755859375,
+                1499.7125244140625,
+                -49.0
+            ],
+            "content": "I think we can use quotes from marathon runners and musicians to create a narrative that ties in with the school's spirit. Maybe we can also incorporate some interactive elements that reflect the energy and resilience of these stories."
+        }
+    ],
+    "current_vehicle": null,
+    "current_place": "Chorus Karaoke",
+    "last_enter_bus_time": null
+}

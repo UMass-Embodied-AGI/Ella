@@ -1,0 +1,189 @@
+{
+    "name": "Taylor Swift",
+    "first_name": "Taylor",
+    "last_name": "Swift",
+    "age": 34,
+    "innate": "achievement, stimulation, self-direction",
+    "learned": "I am a singer-songwriter known for my narrative songwriting and diverse musical styles. I have won numerous awards and have a large fan base worldwide.",
+    "currently": "I am preparing for a concert in New York City.",
+    "lifestyle": "I go to bed around midnight, wake up around 08:00, eat dinner around 18:00",
+    "groups": [
+        {
+            "name": "Celebrity Circle",
+            "description": "A group of famous personalities networking and discussing their latest projects.",
+            "place": "Empire State Building",
+            "members": [
+                "Emma Watson",
+                "Lionel Messi",
+                "Roth Miller",
+                "Taylor Swift"
+            ],
+            "daily_activity": "networking and discussing projects from 17:00 to 18:00"
+        }
+    ],
+    "daily_requirement": "",
+    "curr_time": "October 01, 2024, 11:49:24",
+    "start_time": "October 1, 2024, 09:00:00",
+    "living_place": "Taylor Swift's room at Hyatt Herald Square New York",
+    "react_freq": 60,
+    "importance_trigger_max": 250,
+    "importance_trigger_curr": 250,
+    "importance_ele_n": 0,
+    "daily_plan": [],
+    "hourly_schedule": [
+        {
+            "type": "sleep",
+            "activity": "Sleep",
+            "place": "Taylor Swift's room at Hyatt Herald Square New York",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "00:00:00",
+            "end_time": "08:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Breakfast",
+            "place": "Up on 20 Rooftop Lounge",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "08:00:00",
+            "end_time": "09:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Creative Art Works",
+            "place": null,
+            "building": null,
+            "start_time": "09:00:00",
+            "end_time": "09:10:00",
+            "start_place": "Up on 20 Rooftop Lounge",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Rehearsal for concert",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "09:10:00",
+            "end_time": "12:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to lunch",
+            "place": null,
+            "building": null,
+            "start_time": "12:00:00",
+            "end_time": "12:30:00",
+            "start_place": "Creative Art Works",
+            "end_place": "STATE Grill and Bar"
+        },
+        {
+            "type": "meal",
+            "activity": "Lunch",
+            "place": "STATE Grill and Bar",
+            "building": "Empire State Building",
+            "start_time": "12:30:00",
+            "end_time": "13:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to afternoon rehearsal",
+            "place": null,
+            "building": null,
+            "start_time": "13:30:00",
+            "end_time": "14:00:00",
+            "start_place": "STATE Grill and Bar",
+            "end_place": "Creative Art Works"
+        },
+        {
+            "type": "main",
+            "activity": "Afternoon rehearsal for concert",
+            "place": "Creative Art Works",
+            "building": "Manhattan Mall",
+            "start_time": "14:00:00",
+            "end_time": "16:30:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute to Celebrity Circle meeting",
+            "place": null,
+            "building": null,
+            "start_time": "16:30:00",
+            "end_time": "17:00:00",
+            "start_place": "Creative Art Works",
+            "end_place": "Empire State Building"
+        },
+        {
+            "type": "main",
+            "activity": "Celebrity Circle networking and project discussion",
+            "place": "Empire State Building",
+            "building": "Empire State Building",
+            "start_time": "17:00:00",
+            "end_time": "18:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Dinner",
+            "place": "STATE Grill and Bar",
+            "building": "Empire State Building",
+            "start_time": "18:00:00",
+            "end_time": "19:00:00"
+        },
+        {
+            "type": "commute",
+            "activity": "Commute back to hotel",
+            "place": null,
+            "building": null,
+            "start_time": "19:00:00",
+            "end_time": "19:30:00",
+            "start_place": "STATE Grill and Bar",
+            "end_place": "Taylor Swift's room at Hyatt Herald Square New York"
+        },
+        {
+            "type": "main",
+            "activity": "Relax and unwind",
+            "place": "Taylor Swift's room at Hyatt Herald Square New York",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "19:30:00",
+            "end_time": "23:00:00"
+        },
+        {
+            "type": "meal",
+            "activity": "Light snack",
+            "place": "Up on 20 Rooftop Lounge",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "23:00:00",
+            "end_time": "23:30:00"
+        },
+        {
+            "type": "main",
+            "activity": "Prepare for bed",
+            "place": "Taylor Swift's room at Hyatt Herald Square New York",
+            "building": "Hyatt Herald Square New York",
+            "start_time": "23:30:00",
+            "end_time": "23:59:59"
+        }
+    ],
+    "held_objects": [
+        null,
+        null
+    ],
+    "act_address": null,
+    "act_start_time": null,
+    "act_duration": null,
+    "act_description": null,
+    "act_event": "",
+    "chat": null,
+    "chatting_with_buffer": {},
+    "chatting_end_time": null,
+    "working_place": null,
+    "commute_plan": [
+        {
+            "goal_place": "Creative Art Works",
+            "transit_type": "walk"
+        }
+    ],
+    "commute_plan_idx": 1,
+    "chatting_buffer": [],
+    "current_vehicle": null,
+    "current_place": "Creative Art Works",
+    "last_enter_bus_time": null
+}

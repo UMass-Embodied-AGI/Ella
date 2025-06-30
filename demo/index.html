@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ella</title>
+  <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous"
+  >
+  <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" 
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" 
+    crossorigin="anonymous"
+  >
+  <script src="
+  https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js
+  "></script>
+  <link href="
+  https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/fontawesome.min.css
+  " rel="stylesheet">
+
+  <style>
+    .agent-sprites-side {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      width: 320px;
+      margin: 0 70px 0 0;
+      justify-content: center;
+    }
+    .agent-sprite-container {
+      position: relative;
+      margin: 20px 0px;
+      text-align: center;
+      width: 100px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+    }
+    .agent-sprite-container.selected {
+      border: 2px solid red;
+      border-radius: 5px;
+    }
+    .agent-locator-dot {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      border: 2px solid white;
+    }
+    .agent-sprite-image {
+      width: 50px;
+      cursor: pointer;
+    }
+    .agent-name-label {
+      font-size: 0.85em;
+      margin-top: 3px;
+    }
+    .agent-action-label {
+      font-size: 0.75em;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body class="top-navigation" style="background-color: white">
+  <br><br>
+  <div class="container" style="text-align: center; width: auto; max-width: none; margin: 0 auto;">
+    <h2 style="font-family: Georgia, serif; font-weight: bold;">
+      Ella: Embodied Social Lifelong Simulation 
+      <span id="scene-name"></span>
+    </h2>
+    <br>
+    <div style="display: flex; justify-content: center; margin-bottom: 1em; width: auto; max-width: none;">
+      <div id="left-agent-sprites" class="agent-sprites-side">
+      </div>
+      <div id="global-map-container" style="position: relative; width: 400px; margin: 0 20px;">
+        <canvas 
+          id="map-overlay"
+          width="2000"
+          height="2000"
+          style="border: 2px solid #444; border-radius: 10px; width: 100%; height: auto;"
+        ></canvas>
+        <div style="text-align: center; margin-top: 10px;">
+          <button id="readme-toggle-btn" class="btn btn-outline-primary btn-sm">
+            Show README
+          </button>
+        </div>
+        <div id="readme-overlay" style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0,0,0,0.7);
+          z-index: 9999;
+          color: #fff;
+          font-family: Georgia, serif;
+          padding: 2em;
+          overflow-y: auto;
+        ">
+          <div style="max-width: 750px; margin: 5% auto; background-color: #222; padding: 2em; border-radius: 15px;">
+            <h2 style="text-align: center; color: #00d8ff;">Tips to use this interactive demo:</h2>
+            <ul style="font-size: 1.1em; line-height: 1.8;">
+              <li><strong>Click</strong> an agent sprite on the top-left panel → Toggle agent's position visualization.</li>
+              <li><strong>Double-click</strong> an agent sprite on the top-left panel → Show agent's detailed view.</li>
+              <li>For loading efficiency, ego view is only rendered every 10s.</li>
+              <li>Conversations will show in the right box.</li>
+            </ul>
+            <div style="text-align: center; margin-top: 2em;">
+              <button id="readme-close-btn" class="btn btn-light">
+                Close README
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="conversation-container" style="width: 400px; height: 600px; overflow-y: auto; border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin: 0 0 0 20px;">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div id="game-container" style="text-align: center;"></div>
+    <div style="width:75%; margin: 0 auto; margin-top:4.5em">
+      <h3 style="margin-bottom:-0.5em; font-size:1.5em">Current Time:</h3>
+      <br>
+      <div class="row">
+        <div class="col-md-8" id="game-time">
+          <h2><span id="game-time-content"></span></h2>
+        </div>
+        <div class="col-md-4">
+          <h2 style="text-align: right;">
+            <button id="play_button" type="button" class="btn btn-default">
+              <strong style="font-size:1.2em">
+                <i class="fa-solid fa-play"></i>
+              </strong>
+            </button>
+            <button id="pause_button" type="button" class="btn btn-default">
+              <strong style="font-size:1.2em">
+                <i class="fa-solid fa-pause"></i>
+              </strong>
+            </button>
+          </h2>
+        </div>
+      </div>
+      <br />
+      <hr style="border-color: #999999;" />
+      <br />
+      <div
+        class="row"
+        id="character-tiles"
+        style="border: solid; padding: 2em; border-radius: 15px; display: none;"
+      ></div>
+      <div
+        class="media"
+        id="on_screen_det_content-init"
+        style="
+          background-color: #eeeeee;
+          padding: 1em;
+          padding-left: 3.5em;
+          padding-right: 2em;
+          border-radius: 10px;
+          display: none;
+        "
+      ></div>
+      <div id="character-details-container"></div>
+      <br><br><br>
+      <h3>Social Networks</h3>
+      <div
+        id="groups-container"
+        class="row"
+        style="
+          border: solid;
+          padding: 2em;
+          border-radius: 15px;
+          margin-top: 2em;
+        "
+      ></div>
+      <br>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous">
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous">
+  </script>
+  <script>
+    let agentNamesGlobal = []
+    let cameraParamsGlobal = null
+    let selectedAgents = new Set()
+    let intervalId
+    let isPlaying = false
+    let currentSimTime = 0
+    let lastSimTime = null
+    let currentAgentForDetail = ""
+    let lastTpegoAvailableStep = 0
+    let currentPlaySpeed = 5
+    let configData = null
+    let allStepsData = {}
+
+    function pickRandom(array, num) {
+      const shuffled = array.slice(0)
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        const temp = shuffled[i]
+        shuffled[i] = shuffled[j]
+        shuffled[j] = temp
+      }
+      return shuffled.slice(0, num)
+    }
+
+    function loadAgents() {
+      const sceneNameMap = { "NY": "New York City", "DETROIT": "Detroit City" }
+      fetch("/demo/curr_sim/config.json")
+      .then(response => response.json())
+      .then(config => {
+        configData = config
+        fetch("/demo/steps/all_steps.json")
+        .then(response => response.json())
+        .then(all_steps => {
+          allStepsData = all_steps
+          const agentNames = configData.agent_names || []
+          agentNames.forEach(name => {
+          fetch("/demo/curr_sim"+ '/' + name + "/scratch.json")
+            .then(response => response.json())
+            .then(scratch => {
+              const safeId = name.replace(/\s+/g, "_")
+              document.getElementById("age__" + safeId).innerText = scratch.age || "Unknown"
+              document.getElementById("personality__" + safeId).innerText = scratch.innate || "Unknown"
+              document.getElementById("bio__" + safeId).innerText = scratch.learned || "Unknown"
+              document.getElementById("current_goal__" + safeId).innerText = scratch.currently || "Unknown"
+            })
+            .catch(err => {console.log(err)})
+            const safeId = name.replace(/\s+/g, "_")
+            const detailPanel = createDetailPanel(name)
+            document.getElementById("character-details-container").appendChild(detailPanel)
+          })
+          agentNamesGlobal = agentNames.slice()
+          const groups = configData.groups || {}
+          const locatorColors = configData.locator_colors || []
+          const sceneName = document.getElementById("scene-name")
+          sceneName.innerText = "at " + sceneNameMap[configData.sim_name.split('_')[0]]
+          sceneName.style.color = "red"
+          sceneName.style.fontFamily = "georgia"
+          sceneName.style.fontStyle = "italic"
+          sceneName.style.fontWeight = "bold"
+          createAllGroupVisuals(groups)
+          const detailsContainer = document.getElementById("character-details-container")
+          agentNames.forEach(name => {
+            const detailPanel = createDetailPanel(name)
+            detailsContainer.appendChild(detailPanel)
+          })
+          const randomFive = pickRandom(agentNamesGlobal, 5)
+          randomFive.forEach(a => selectedAgents.add(a))
+          placeAgentSprites(agentNames, locatorColors)
+          fetch("/demo/assets/global_cam_parameters.json")
+          .then(response => response.json())
+          .then(camParams => {
+            cameraParamsGlobal = camParams
+            if (agentNamesGlobal.length > 0) {
+              const firstAgent = agentNamesGlobal[0]
+              currentAgentForDetail = firstAgent
+              const safeId = firstAgent.replace(/\s+/g, "_")
+              const firstPanel = document.getElementById("on_screen_det_content-" + safeId)
+              if (firstPanel) firstPanel.style.display = "block"
+            }
+          })
+        })
+      })
+      .catch(err => {console.log(err)})
+    }
+
+    function placeAgentSprites(agentNames, locatorColors) {
+      const leftContainer = document.getElementById("left-agent-sprites")
+      agentNames.forEach(agentName => {
+        const idx = agentNames.indexOf(agentName)
+        const color = locatorColors[idx] || "#000"
+        const spriteEl = createAgentSprite(agentName, color)
+        leftContainer.appendChild(spriteEl)
+      })
+    }
+
+    function toggleSelected(agentName, container) {
+      if (selectedAgents.has(agentName)) {
+        selectedAgents.delete(agentName)
+        container.classList.remove("selected")
+      } else {
+        selectedAgents.add(agentName)
+        container.classList.add("selected")
+      }
+      updateStepData()
+    }
+
+    function showDetail(agentName) {
+      const safeId = agentName.replace(/\s+/g, "_")
+      document.querySelectorAll("[id^='on_screen_det_content-']").forEach(el => {
+        el.style.display = "none"
+      })
+      const panel = document.getElementById("on_screen_det_content-" + safeId)
+      if (panel) panel.style.display = "block"
+      currentAgentForDetail = agentName
+    }
+
+    function createAgentSprite(agentName, color) {
+      const safeId = agentName.replace(/\s+/g, "_")
+      const container = document.createElement("div")
+      container.className = "agent-sprite-container"
+      if (selectedAgents.has(agentName)) container.classList.add("selected")
+      const dot = document.createElement("div")
+      dot.className = "agent-locator-dot"
+      dot.style.backgroundColor = color
+      const img = document.createElement("img")
+      img.className = "agent-sprite-image"
+      img.src = `/demo/assets/avatars/${agentName}.png`
+      img.alt = agentName
+      img.addEventListener("click", () => {
+        toggleSelected(agentName, container)
+      })
+      img.addEventListener("dblclick", () => {
+        showDetail(agentName)
+      })
+      const nameLabel = document.createElement("div")
+      nameLabel.className = "agent-name-label"
+      nameLabel.textContent = agentName
+      const actionLabel = document.createElement("div")
+      actionLabel.className = "agent-action-label"
+      actionLabel.id = `agent-action-${safeId}`
+      container.appendChild(dot)
+      container.appendChild(img)
+      container.appendChild(nameLabel)
+      container.appendChild(actionLabel)
+      return container
+    }
+
+    function createAllGroupVisuals(groups) {
+      const groupsContainer = document.getElementById("groups-container")
+      groupsContainer.innerHTML = ""
+      Object.keys(groups).forEach(groupName => {
+        const colDiv = document.createElement("div")
+        colDiv.className = "col-md-4 col-sm-6"
+        colDiv.style.marginBottom = "2em"
+        const groupTitle = document.createElement("h4")
+        groupTitle.textContent = groupName
+        colDiv.appendChild(groupTitle)
+        const svgSize = 320
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
+        svg.setAttribute("width", svgSize)
+        svg.setAttribute("height", svgSize)
+        svg.style.border = "1px solid #ccc"
+        svg.style.borderRadius = "10px"
+        svg.style.backgroundColor = "#f9f9f9"
+        const centerX = svgSize / 2
+        const centerY = svgSize / 2
+        const radius = 100
+        const members = groups[groupName].members || []
+        const angleStep = (2 * Math.PI) / (members.length || 1)
+        const positions = members.map((member, i) => {
+          const angle = angleStep * i
+          return {
+            member,
+            x: centerX + radius * Math.cos(angle),
+            y: centerY + radius * Math.sin(angle)
+          }
+        })
+        for (let i = 0; i < positions.length; i++) {
+          for (let j = i + 1; j < positions.length; j++) {
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line")
+            line.setAttribute("x1", positions[i].x)
+            line.setAttribute("y1", positions[i].y)
+            line.setAttribute("x2", positions[j].x)
+            line.setAttribute("y2", positions[j].y)
+            line.setAttribute("stroke", "#aaa")
+            line.setAttribute("stroke-width", "1")
+            svg.appendChild(line)
+          }
+        }
+        positions.forEach(pos => {
+          const image = document.createElementNS("http://www.w3.org/2000/svg", "image")
+          image.setAttribute("href", `/demo/assets/avatars/${pos.member}.png`)
+          image.setAttribute("x", pos.x - 16)
+          image.setAttribute("y", pos.y - 16)
+          image.setAttribute("width", 32)
+          image.setAttribute("height", 32)
+          svg.appendChild(image)
+          const nameText = document.createElementNS("http://www.w3.org/2000/svg", "text")
+          nameText.setAttribute("x", pos.x)
+          nameText.setAttribute("y", pos.y - 20)
+          nameText.setAttribute("fill", "#333")
+          nameText.setAttribute("text-anchor", "middle")
+          nameText.style.fontSize = "0.8em"
+          nameText.textContent = pos.member
+          svg.appendChild(nameText)
+        })
+        colDiv.appendChild(svg)
+        groupsContainer.appendChild(colDiv)
+      })
+    }
+
+    function createDetailPanel(agentName) {
+      const safeId = agentName.replace(/\s+/g, "_")
+      const container = document.createElement("div")
+      container.className = "media"
+      container.id = `on_screen_det_content-${safeId}`
+      container.style.backgroundColor = "#EEEEEE"
+      container.style.padding = "1em 1em 1em 1em"
+      container.style.borderRadius = "1em"
+      container.style.display = "none"
+      const link = document.createElement("a")
+      const detailImg = document.createElement("img")
+      detailImg.src = `/demo/assets/avatars/${agentName}.png`
+      detailImg.style.width = "5em"
+      link.appendChild(detailImg)
+      link.style.marginLeft = "1em"
+      const mediaBody = document.createElement("div")
+      mediaBody.className = "media-body"
+      const rowDiv = document.createElement("div")
+      rowDiv.className = "row"
+      const nameCol = document.createElement("div")
+      nameCol.className = "col-md-6 d-flex align-items-center"
+      const h2 = document.createElement("h2")
+      h2.id = `name__${safeId}`
+      h2.style.marginTop = "0.7em"
+      h2.style.fontSize = "1.85em"
+      h2.innerHTML = agentName
+      nameCol.appendChild(link)
+      nameCol.appendChild(h2)
+      const detailImg2 = document.createElement("img")
+      detailImg2.id = `detail-tpego-${safeId}`
+      detailImg2.width = 220
+      detailImg2.style.border = "2px solid #444"
+      detailImg2.style.borderRadius = "10px"
+      const videoCol = document.createElement("div")
+      videoCol.className = "col-md-6 text-right"
+      videoCol.appendChild(detailImg2)
+      rowDiv.appendChild(nameCol)
+      rowDiv.appendChild(videoCol)
+      const infoDiv = document.createElement("div")
+      infoDiv.style.marginTop = "1em"
+      infoDiv.style.marginLeft = "1em"
+      infoDiv.innerHTML =
+        "<p style='font-size:1.2em'><strong>Age:</strong><br><span id='age__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Personality:</strong><br><span id='personality__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Bio:</strong><br><span id='bio__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Current Goal:</strong><br><span id='current_goal__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Current Schedule:</strong><br><span id='current_schedule__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Current Action:</strong><br><span id='current_action__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Current Location:</strong><br><span id='target_address__" +
+        safeId +
+        "'></span></p>" +
+        "<p style='font-size:1.2em'><strong>Current Conversation:</strong><br><span id='chat__" +
+        safeId +
+        "'></span></p>" +
+        "<span id='time__" + safeId + "' style='display:none'></span>"
+      mediaBody.appendChild(rowDiv)
+      mediaBody.appendChild(infoDiv)
+      container.appendChild(mediaBody)
+      return container
+    }
+
+    function projectLocationsAndDrawDots(locatorPositions, colors, circleRadii, cameraParams) {
+      if (!cameraParams) return
+      const fov = cameraParams.camera_fov
+      const w = cameraParams.camera_res[0]
+      const h = cameraParams.camera_res[1]
+      const f_x = w / (2.0 * Math.tan((fov * Math.PI / 180.0) / 2.0))
+      const f_y = h / (2.0 * Math.tan((fov * Math.PI / 180.0) / 2.0))
+      const intrinsicK = [
+        [f_x, 0.0, w / 2.0],
+        [0.0, f_y, h / 2.0],
+        [0.0, 0.0, 1.0]
+      ]
+      const extrinsic = cameraParams.camera_extrinsics.slice(0, 3).map(row => row.slice(0, 4))
+      const canvas = document.getElementById("map-overlay")
+      const ctx = canvas.getContext("2d")
+      const image = new Image()
+      image.src = "/demo/assets/global.png"
+      image.onload = function() {
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
+        locatorPositions.forEach((pos, idx) => {
+          if (!pos) return
+          const color = colors[idx]
+          const radius = circleRadii[idx] || 5
+          const [r, g, b] = color
+          const P_world = [pos[0], pos[1], pos[2], 1.0]
+          const P_cam = matMul_3x4_4x1(extrinsic, P_world)
+          const P_img = matMul_3x3_3x1(intrinsicK, P_cam)
+          const pixel_x = P_img[0] / P_img[2]
+          const pixel_y = P_img[1] / P_img[2]
+          ctx.beginPath()
+          ctx.arc(pixel_x, pixel_y, radius, 0, 2 * Math.PI, false)
+          ctx.fillStyle = `rgb(${r*255}, ${g*255}, ${b*255})`
+          ctx.fill()
+        })
+      }
+    }
+
+    function matMul_3x4_4x1(mat3x4, vec4) {
+      const out = [0, 0, 0]
+      for (let i = 0; i < 3; i++) {
+        out[i] =
+          mat3x4[i][0]*vec4[0] +
+          mat3x4[i][1]*vec4[1] +
+          mat3x4[i][2]*vec4[2] +
+          mat3x4[i][3]*vec4[3]
+      }
+      return out
+    }
+
+    function matMul_3x3_3x1(mat3x3, vec3) {
+      const out = [0, 0, 0]
+      for (let i = 0; i < 3; i++) {
+        out[i] =
+          mat3x3[i][0]*vec3[0] +
+          mat3x3[i][1]*vec3[1] +
+          mat3x3[i][2]*vec3[2]
+      }
+      return out
+    }
+
+    function updateConversations(currentSimTime) {
+      const agentNames = configData.agent_names || []
+      if (lastSimTime === null) {
+        lastSimTime = currentSimTime;
+        actualStep = Math.floor(currentSimTime);
+        agentNames.forEach((name, index) => {
+          const safeId = name.replace(/\s+/g, "_");
+          let stepData = allStepsData[name][actualStep];
+          const current_time = stepData["curr_time"];
+          const current_schedule = stepData["action_desp"] || "None";
+          const current_action = (stepData["action"] && stepData["action"]["type"]) || "None";
+          if (current_action === "converse") {
+            current_chat = stepData["action"]["arg1"];
+            const conversationBox = document.getElementById("conversation-container");
+            const line = document.createElement("div");
+            if (current_chat != null) {
+              let cleaned_chat = current_chat.replace(/\b(?:desk|table|person|chair)_\d+\b/g, "");
+              line.textContent = "[" + current_time + "] " + name + ": " + cleaned_chat;
+              conversationBox.appendChild(line);
+            }
+          }
+        });
+      } else {
+        let lastStep = Math.floor(lastSimTime);
+        let currentStep = Math.floor(currentSimTime);
+        for (let step = lastStep + 1; step <= currentStep; step++) {
+          agentNames.forEach((name) => {
+            const safeId = name.replace(/\s+/g, "_");
+            let stepData = allStepsData[name][step];
+            if (!stepData) return;
+
+            const current_time = stepData["curr_time"];
+            const current_action = (stepData["action"] && stepData["action"]["type"]) || "None";
+            if (current_action === "converse") {
+              current_chat = stepData["action"]["arg1"];
+              const conversationBox = document.getElementById("conversation-container");
+              const line = document.createElement("div");
+              if (current_chat != null) {
+                let cleaned_chat = current_chat.replace(/\b(?:desk|table|person|chair)_\d+\b/g, "");
+                line.textContent = "[" + current_time + "] " + name + ": " + cleaned_chat;
+                conversationBox.appendChild(line);
+              }
+            }
+          });
+        }
+        lastSimTime = currentSimTime;
+      }
+    }
+
+    function updateStepData() {
+      const actualStep = Math.floor(currentSimTime * 1)
+      const agentNames = configData.agent_names || []
+      const locatorPositions = []
+      const locatorColors = []
+      const circleRadii = []
+      agentNames.forEach((name, index) => {
+        const safeId = name.replace(/\s+/g, "_")
+        let stepData = allStepsData[name][actualStep]
+        const current_time = stepData["curr_time"] || "Unknown Time"
+        const current_schedule = stepData["action_desp"] || "None"
+        const current_action = (stepData["action"] && stepData["action"]["type"]) || "None"
+        let current_chat = "None"
+        if (current_action === "converse") {
+          current_chat = stepData["action"]["arg1"]
+        }
+        const current_place = (stepData["obs"] && stepData["obs"]["current_place"]) || "Open Space"
+        const step_time = stepData["curr_time"] || "Unknown Time"
+        document.getElementById("current_schedule__" + safeId).innerText = current_schedule
+        document.getElementById("current_action__" + safeId).innerText = current_action
+        document.getElementById("target_address__" + safeId).innerText = current_place
+        document.getElementById("chat__" + safeId).innerText = current_chat
+        document.getElementById("game-time-content").innerText = step_time
+        document.getElementById("time__" + safeId).innerText = step_time
+        const actionEl = document.getElementById("agent-action-" + safeId)
+        if (actionEl) {
+          actionEl.innerText = current_action
+        }
+        const pose = stepData["obs"] && stepData["obs"]["pose"]
+        if (pose && pose.length >= 3) {
+          if (selectedAgents.has(name)) {
+            locatorPositions[index] = [pose[0], pose[1], pose[2]]
+          } else {
+            locatorPositions[index] = null
+          }
+        } else {
+          locatorPositions[index] = null
+        }
+        const color = configData.locator_colors_rgb[index]
+        locatorColors[index] = color
+        circleRadii[index] = 30
+        if (index === agentNames.length - 1) {
+          projectLocationsAndDrawDots(locatorPositions, locatorColors, circleRadii, cameraParamsGlobal)
+          updateConversations(currentSimTime)
+        }
+      })
+      if (currentAgentForDetail !== "") {
+        const safeId = currentAgentForDetail.replace(/\s+/g, "_");
+        const dv = document.getElementById(`detail-tpego-${safeId}`);
+        availableStep = Math.floor(actualStep / 10) * 10;
+        if (availableStep === 0) {
+          const conversationBox = document.getElementById("conversation-container")
+          conversationBox.innerHTML = ""
+        }
+        // console.log("availableStep", availableStep)
+        const TpegoPath = `/demo/ego/${currentAgentForDetail}/rgb_${availableStep.toString().padStart(6, "0")}.png`;
+        if (availableStep != lastTpegoAvailableStep) {
+          fetch(TpegoPath, { method: 'HEAD' })
+          .then((response) => {
+            if (response.ok) {
+              dv.src = TpegoPath;
+              lastTpegoAvailableStep = availableStep;
+            } else {
+              dv.src = `/demo/ego/${currentAgentForDetail}/rgb_${lastTpegoAvailableStep.toString().padStart(6, "0")}.png`;
+            }
+          })
+          .catch(() => {
+            dv.src = `/demo/ego/${currentAgentForDetail}/rgb_${lastTpegoAvailableStep.toString().padStart(6, "0")}.png`;
+          });
+        }
+      }
+    }
+
+    function tick() {
+      const maxSimTime = Math.floor(configData.step / 1)
+      currentSimTime += 1 * currentPlaySpeed
+      if (currentSimTime < 0) currentSimTime = 0
+      if (currentSimTime > maxSimTime) currentSimTime = 0
+      updateStepData()
+      const progress = (currentSimTime / maxSimTime) * 100
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("readme-toggle-btn").addEventListener("click", () => {
+        document.getElementById("readme-overlay").style.display = "block"
+      })
+      document.getElementById("readme-close-btn").addEventListener("click", () => {
+        document.getElementById("readme-overlay").style.display = "none"
+      })
+      loadAgents()
+      document.getElementById("play_button").addEventListener("click", () => {
+        if (!isPlaying) {
+          isPlaying = true
+          intervalId = setInterval(tick, 1000)
+        }
+      })
+      document.getElementById("pause_button").addEventListener("click", () => {
+        isPlaying = false
+        clearInterval(intervalId)
+      })
+    })
+  </script>
+</body>
+</html>
