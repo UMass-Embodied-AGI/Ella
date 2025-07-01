@@ -222,17 +222,17 @@
 
     function loadAgents() {
       const sceneNameMap = { "NY": "New York City", "DETROIT": "Detroit City" }
-      fetch("/demo/curr_sim/config.json")
+      fetch("curr_sim/config.json")
       .then(response => response.json())
       .then(config => {
         configData = config
-        fetch("/demo/steps/all_steps.json")
+        fetch("steps/all_steps.json")
         .then(response => response.json())
         .then(all_steps => {
           allStepsData = all_steps
           const agentNames = configData.agent_names || []
           agentNames.forEach(name => {
-          fetch("/demo/curr_sim"+ '/' + name + "/scratch.json")
+          fetch("curr_sim"+ '/' + name + "/scratch.json")
             .then(response => response.json())
             .then(scratch => {
               const safeId = name.replace(/\s+/g, "_")
@@ -264,7 +264,7 @@
           const randomFive = pickRandom(agentNamesGlobal, 5)
           randomFive.forEach(a => selectedAgents.add(a))
           placeAgentSprites(agentNames, locatorColors)
-          fetch("/demo/assets/global_cam_parameters.json")
+          fetch("assets/global_cam_parameters.json")
           .then(response => response.json())
           .then(camParams => {
             cameraParamsGlobal = camParams
@@ -322,7 +322,7 @@
       dot.style.backgroundColor = color
       const img = document.createElement("img")
       img.className = "agent-sprite-image"
-      img.src = `/demo/assets/avatars/${agentName}.png`
+      img.src = `assets/avatars/${agentName}.png`
       img.alt = agentName
       img.addEventListener("click", () => {
         toggleSelected(agentName, container)
@@ -387,7 +387,7 @@
         }
         positions.forEach(pos => {
           const image = document.createElementNS("http://www.w3.org/2000/svg", "image")
-          image.setAttribute("href", `/demo/assets/avatars/${pos.member}.png`)
+          image.setAttribute("href", `assets/avatars/${pos.member}.png`)
           image.setAttribute("x", pos.x - 16)
           image.setAttribute("y", pos.y - 16)
           image.setAttribute("width", 32)
@@ -418,7 +418,7 @@
       container.style.display = "none"
       const link = document.createElement("a")
       const detailImg = document.createElement("img")
-      detailImg.src = `/demo/assets/avatars/${agentName}.png`
+      detailImg.src = `assets/avatars/${agentName}.png`
       detailImg.style.width = "5em"
       link.appendChild(detailImg)
       link.style.marginLeft = "1em"
@@ -496,7 +496,7 @@
       const canvas = document.getElementById("map-overlay")
       const ctx = canvas.getContext("2d")
       const image = new Image()
-      image.src = "/demo/assets/global.png"
+      image.src = "assets/global.png"
       image.onload = function() {
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
         locatorPositions.forEach((pos, idx) => {
@@ -644,7 +644,7 @@
           conversationBox.innerHTML = ""
         }
         // console.log("availableStep", availableStep)
-        const TpegoPath = `/demo/ego/${currentAgentForDetail}/rgb_${availableStep.toString().padStart(6, "0")}.png`;
+        const TpegoPath = `ego/${currentAgentForDetail}/rgb_${availableStep.toString().padStart(6, "0")}.png`;
         if (availableStep != lastTpegoAvailableStep) {
           fetch(TpegoPath, { method: 'HEAD' })
           .then((response) => {
@@ -652,11 +652,11 @@
               dv.src = TpegoPath;
               lastTpegoAvailableStep = availableStep;
             } else {
-              dv.src = `/demo/ego/${currentAgentForDetail}/rgb_${lastTpegoAvailableStep.toString().padStart(6, "0")}.png`;
+              dv.src = `ego/${currentAgentForDetail}/rgb_${lastTpegoAvailableStep.toString().padStart(6, "0")}.png`;
             }
           })
           .catch(() => {
-            dv.src = `/demo/ego/${currentAgentForDetail}/rgb_${lastTpegoAvailableStep.toString().padStart(6, "0")}.png`;
+            dv.src = `ego/${currentAgentForDetail}/rgb_${lastTpegoAvailableStep.toString().padStart(6, "0")}.png`;
           });
         }
       }
