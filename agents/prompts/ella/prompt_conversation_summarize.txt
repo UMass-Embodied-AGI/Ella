@@ -1,0 +1,7 @@
+I just had a conversation with $Target_name$. Summarize it in one sentence.
+
+Full conversation:
+
+$Conversation_history$
+
+Note: Output only the summary of the conversation in one sentence. Do not include any other information.

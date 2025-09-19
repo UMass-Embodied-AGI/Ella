@@ -1,0 +1,126 @@
+[ 
+    {
+        "type": "sleep",
+        "activity": "Sleep",
+        "place": "$home$",
+        "building": "$home_building$",
+        "start_time": "00:00:00",
+        "end_time": "08:00:00"
+    },
+    {
+        "type": "meal",
+        "activity": "Breakfast",
+        "place": "$home$",
+        "building": "$home_building$",
+        "start_time": "08:00:00",
+        "end_time": "08:30:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to $main1$",
+        "place": null,
+        "building": null,
+        "start_time": "08:30:00",
+        "end_time": "08:45:00",
+        "start_place": "$home$",
+        "end_place": "$main1$"
+    },
+    {
+        "type": "main",
+        "activity": "Activity at $main1$",
+        "place": "$main1$",
+        "building": "$main1_building$",
+        "start_time": "08:45:00",
+        "end_time": "12:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to $lunch$",
+        "place": null,
+        "building": null,
+        "start_time": "12:00:00",
+        "end_time": "12:15:00",
+        "start_place": "$main1$",
+        "end_place": "$lunch$"
+    },
+    {
+        "type": "meal",
+        "activity": "Lunch",
+        "place": "$lunch$",
+        "building": "$lunch_building$",
+        "start_time": "12:15:00",
+        "end_time": "13:15:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to $main2$",
+        "place": null,
+        "building": null,
+        "start_time": "13:15:00",
+        "end_time": "13:30:00",
+        "start_place": "$lunch$",
+        "end_place": "$main2$"
+    },
+    {
+        "type": "main",
+        "activity": "Activity at $main2$",
+        "place": "$main2$",
+        "building": "$main2_building$",
+        "start_time": "13:30:00",
+        "end_time": "18:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to $dinner$",
+        "place": null,
+        "building": null,
+        "start_time": "18:00:00",
+        "end_time": "18:15:00",
+        "start_place": "$main2$",
+        "end_place": "$dinner$"
+    },
+    {
+        "type": "meal",
+        "activity": "Dinner",
+        "place": "$dinner$",
+        "building": "$dinner_building$",
+        "start_time": "18:15:00",
+        "end_time": "19:15:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to $main3$",
+        "place": null,
+        "building": null,
+        "start_time": "19:15:00",
+        "end_time": "19:30:00",
+        "start_place": "$dinner$",
+        "end_place": "$main3$"
+    },
+    {
+        "type": "main",
+        "activity": "Activity at $main3$",
+        "place": "$main3$",
+        "building": "$main3_building$",
+        "start_time": "19:30:00",
+        "end_time": "22:30:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to $home$",
+        "place": null,
+        "building": null,
+        "start_time": "22:30:00",
+        "end_time": "22:45:00",
+        "start_place": "$main3$",
+        "end_place": "$home$"
+    },
+    {
+        "type": "main",
+        "activity": "Prepare for Bed",
+        "place": "$home$",
+        "building": "$home_building$",
+        "start_time": "22:45:00",
+        "end_time": "23:59:59"
+    }
+]

@@ -1,0 +1,135 @@
+Please act as a human agent within the context of embodied intelligence 
+and break down the time period into smaller consecutive sub-activities with no gaps or overlaps in time. 
+
+**Character Description**:
+
+$Character$
+
+**Current Phase of the Plan**:
+
+$Plan$
+(**Important**: never make operation on objects not listed below!):
+
+objects' infos:
+$Memory$
+
+**Notice**
+1. When the character finishes work, they should **navigate_to** a known object from the **objects' infos** list instead of using "exit."  
+2. The character must interact only with objects listed in **objects' infos**—any object not in the list **must not** be used as a parameter.
+
+**Requirements**:
+1. The total time range for these sub-activities must cover the entire span from 09:00:00 to 15:00:00 exactly, with no gaps or overlaps.
+2. The sequence of sub-activities should logically describe what the character might do during this work period,
+ such as walking around, picking up items, preparing coffee, taking short breaks, drinking water, sitting, standing, etc.
+3. The output must be a valid JSON array of these sub-activity objects. Do not add extra keys that are not listed.
+
+The output should be represented in JSON format. Each scheduled activity has:
+1. **description** (string): A brief description of the activity.
+2. **time** (HH:MM:SS): When the activity starts.
+3. **motion_list**: An array of motion objects that describe the specific actions needed to carry out this activity.
+
+We want a detailed, step-by-step sequence describing exactly what the character does, using the following motion list:
+
+**Supported Action Types and Requirements**:
+
+1. **Action List**  
+    - **navigate_to**  
+        - The character walks to a specific location in the 3D world.  
+        - Must include `"arg1": "object name"`, which is the name of the target location the character navigates to.
+   - **sleep**: The character goes to sleep.  
+     - No additional parameters required.
+   - **wake**: The character wakes up.  
+     - No additional parameters required.
+   - **pick**: The character picks up an object.  
+     - Must include `"arg1": [hand ID, e.g., 0 or 1]` and `"arg2": "object_name"`, which is the name of the object being picked up.
+     - If picking up an item in a store, it is considered a purchase (money is deducted).
+     - **Important**: You must put the object to somewhere before picking another objects. One hand can hold at most one object at a time.
+   - **put**: The character puts down an object.  
+     - Must include `"arg1": [hand ID, e.g., 0 or 1]` and `"arg2": "object name"`, which is the location name of where the object is placed.
+     - By default, this places the object on the ground right in front of the character’s current position.  
+   - **stand**: The character changes from a sitting or sleeping position to standing.  
+     - No additional parameters required.
+   - **sit**: The character sits down.  
+     - Must include `"arg1": "object name"`, which is the name of the sit location.
+     - Note that you should not sit on a table.
+   - **look_at**: The character turns to face a specific direction.  
+     - Must include `"arg1": "object name"`, which is the name of the object the character is looking at.
+     - Note that navigate_to and other motions do not guarantee the character's facing direction, so use look_at to ensure the character is looking in the correct direction.
+   - **drink**: The character performs a drinking action.  
+     - Must include `"arg1": [hand ID, e.g., 0 or 1]` indicating which hand is using.
+   - **eat**: The character performs an eating action.  
+     - Must include `"arg1": [hand ID, e.g., 0 or 1]` indicating which hand is using.
+     - Notice that after eat and drink motion, the object will not disappear and still be in the hand, so you have to put it down and then be able to pick another object.
+   - **wait**: The character does nothing for a period (just waiting).  
+     - No additional parameters required.
+
+
+### Structure of Each Activity
+{
+    "description": "some text describing the activity",
+    "time": "HH:MM:SS",
+    "motion_list": [
+        {
+            "type": "valid_action_type",
+            "arg1": ...,
+            "arg2": ...
+        },
+        ...
+    ]
+}
+
+
+### **Example Output**
+```json
+[
+    {
+        "description": "Eat an apple and put it on a table",
+        "time": "09:00:00",
+        "motion_list": [
+            {
+                "type": "pick",
+                "arg1": 0,
+                "arg2": "apple"
+            },
+            {
+                "type": "eat",
+                "arg1": 0
+            },
+            {
+                "type": "put",
+                "arg1": 0,
+                "arg2": "table",
+            },
+        ]
+    },
+    {
+        "description": "Take a short rest",
+        "time": "09:15:00",
+        "motion_list": [
+            {
+                "type": "sit",
+                "arg1": "sofa"
+            }
+        ]
+    },
+    {
+        "description": "Start working",
+        "time": "09:30:00",
+        "motion_list": [
+            {
+                "type": "stand"
+            },
+            {
+                "type": "navigate_to",
+                "arg1": "desk"
+            },
+            {
+                "type": "look_at",
+                "arg1": "desk"
+            }
+        ]
+    }
+]
+```
+
+The decomposed motions list are:

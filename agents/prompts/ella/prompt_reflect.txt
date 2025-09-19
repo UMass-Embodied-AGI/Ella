@@ -1,0 +1,2 @@
+Given my character description, reflect on my recent experiences, and infer $$ high-level insights.
+

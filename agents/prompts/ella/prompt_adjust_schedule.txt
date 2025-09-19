@@ -1,0 +1,41 @@
+Given my character description, current schedule and situation, please help me adjust today's remaining schedule.
+
+My Character Description:
+
+$Character$
+
+My current schedule:
+
+$Schedule$
+
+Current Time:
+
+$Time$
+
+Current Place:
+
+$Place$
+
+Current Situation:
+
+$Context$
+
+Reason for adjustment:
+
+$Reason$
+
+Schedule format: The output should be a JSON object which is an array of activities for the character. Each activity should follow the following format:
+
+{
+    "type": "activity type, should be one of the following: 'commute', 'meal', 'sleep', 'main'",
+    "activity": "activity description",
+    "place": "name of the place where the activity takes place, should be in the list of the known places. Should be null for commute activities",
+    "building": "name of the building the activity place belongs to, should be consistent as in the list of known places. Should be null for commute activities",
+    "start_time": "HH:MM:SS",
+    "end_time": "HH:MM:SS",
+}
+
+Note: While keep the activities before Current Time unchanged, adjust the remaining schedules based on the character's description and current situation. The place should be mentioned for each activity and must be included in the known places. Do not hallucinate places. Commute activities should be given enough time to finish and be inserted between all consecutive activities that do not share the same building so the agent can have time to commute to the correct building before the start of the activity, including commute to meal places. The schedule should start at 00:00:00 and end at 23:59:59, and covering the consecutive time of 24 hours with no gaps. The schedule should not end with a commute activity or an activity lasting over 23:59:59, so the character is not commuting when the day is ending.
+
+My adjusted schedule for today:
+

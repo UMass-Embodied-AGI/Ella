@@ -1,0 +1,19 @@
+I just had a conversation with $Target_name$. Help me extract new knowledge I learned from it.
+
+Full conversation:
+
+$Conversation_history$
+
+Note: Output a JSON object which is an array of knowledge items. Each knowledge item should follow the following format:
+
+{
+    "name": "name of the knowledge item, should be a concise noun or phrase",
+    "description": "description of the knowledge item"
+    other fields
+}
+
+Example knowledge items I already have:
+
+$Knowledge_items$
+
+New knowledge items I learned from the conversation:

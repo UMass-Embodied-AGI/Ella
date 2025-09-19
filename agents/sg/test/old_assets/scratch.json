@@ -1,0 +1,196 @@
+[
+    {
+        "type": "sleep",
+        "activity": "Sleeping in Genghis Khan's room",
+        "place": "Genghis Khan's room at Hotel at The Detroit Club",
+        "building": "The Detroit Club.001",
+        "start_time": "00:00:00",
+        "end_time": "08:00:00"
+    },
+    {
+        "type": "meal",
+        "activity": "Breakfast at Bohemia",
+        "place": "Bohemia at The Detroit Club",
+        "building": "The Detroit Club.001",
+        "start_time": "08:00:00",
+        "end_time": "08:30:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to CrossFit in the D",
+        "place": null,
+        "building": null,
+        "start_time": "08:30:00",
+        "end_time": "08:50:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to CrossFit in the D",
+        "place": null,
+        "building": null,
+        "start_time": "09:00:00",
+        "end_time": "09:15:00",
+        "start_place": "Genghis Khan's room at Hotel at The Detroit Club",
+        "end_place": "CrossFit in the D"
+    },
+    {
+        "type": "main",
+        "activity": "Morning workout at CrossFit in the D",
+        "place": "CrossFit in the D",
+        "building": "Griswold Capitol Park.001",
+        "start_time": "09:15:00",
+        "end_time": "10:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to Lafayette Coney Island",
+        "place": null,
+        "building": null,
+        "start_time": "10:00:00",
+        "end_time": "10:20:00",
+        "start_place": "CrossFit in the D",
+        "end_place": "Lafayette Coney Island"
+    },
+    {
+        "type": "meal",
+        "activity": "Lunch at Lafayette Coney Island",
+        "place": "Lafayette Coney Island",
+        "building": "118 West Lafayette Boulevard",
+        "start_time": "10:20:00",
+        "end_time": "10:50:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to XHIBITION",
+        "place": null,
+        "building": null,
+        "start_time": "10:50:00",
+        "end_time": "11:10:00",
+        "start_place": "Lafayette Coney Island",
+        "end_place": "XHIBITION"
+    },
+    {
+        "type": "main",
+        "activity": "Shopping for fresh items at XHIBITION",
+        "place": "XHIBITION",
+        "building": "Farwell Building.001",
+        "start_time": "11:10:00",
+        "end_time": "12:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to SmartAuction",
+        "place": null,
+        "building": null,
+        "start_time": "12:00:00",
+        "end_time": "12:20:00",
+        "start_place": "XHIBITION",
+        "end_place": "SmartAuction"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to SmartAuction",
+        "place": null,
+        "building": null,
+        "start_time": "12:20:01",
+        "end_time": "12:35:01",
+        "start_place": null,
+        "end_place": "SmartAuction"
+    },
+    {
+        "type": "main",
+        "activity": "Exploring beverages at SmartAuction",
+        "place": "SmartAuction",
+        "building": "Ally Detroit Center.001",
+        "start_time": "12:35:01",
+        "end_time": "13:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to GDW Fulfillment",
+        "place": null,
+        "building": null,
+        "start_time": "13:00:00",
+        "end_time": "13:20:00",
+        "start_place": "SmartAuction",
+        "end_place": "GDW Fulfillment"
+    },
+    {
+        "type": "main",
+        "activity": "Browsing snacks and beverages at GDW Fulfillment",
+        "place": "GDW Fulfillment",
+        "building": "First State Bank.001",
+        "start_time": "13:20:00",
+        "end_time": "14:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to Ezelli Hair Salon",
+        "place": null,
+        "building": null,
+        "start_time": "14:00:00",
+        "end_time": "14:20:00",
+        "start_place": "GDW Fulfillment",
+        "end_place": "Ezelli Hair Salon"
+    },
+    {
+        "type": "main",
+        "activity": "Exploring snacks at Ezelli Hair Salon",
+        "place": "Ezelli Hair Salon",
+        "building": "One Campus Martius.001",
+        "start_time": "14:20:00",
+        "end_time": "15:00:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute back to Hotel at The Detroit Club",
+        "place": null,
+        "building": null,
+        "start_time": "15:00:00",
+        "end_time": "15:20:00",
+        "start_place": "Ezelli Hair Salon",
+        "end_place": "Genghis Khan's room at Hotel at The Detroit Club"
+    },
+    {
+        "type": "main",
+        "activity": "Rest and preparation for evening activities",
+        "place": "Genghis Khan's room at Hotel at The Detroit Club",
+        "building": "The Detroit Club.001",
+        "start_time": "15:20:00",
+        "end_time": "18:00:00"
+    },
+    {
+        "type": "meal",
+        "activity": "Dinner at Bohemia",
+        "place": "Bohemia at The Detroit Club",
+        "building": "The Detroit Club.001",
+        "start_time": "18:00:00",
+        "end_time": "18:30:00"
+    },
+    {
+        "type": "commute",
+        "activity": "Commute to Hotel at The Detroit Club",
+        "place": null,
+        "building": null,
+        "start_time": "18:30:00",
+        "end_time": "19:00:00",
+        "start_place": "Bohemia at The Detroit Club",
+        "end_place": "Hotel at The Detroit Club"
+    },
+    {
+        "type": "main",
+        "activity": "Cultural discussion with the Cultural Exchange Forum",
+        "place": "Hotel at The Detroit Club",
+        "building": "The Detroit Club.001",
+        "start_time": "19:00:00",
+        "end_time": "20:00:00"
+    },
+    {
+        "type": "main",
+        "activity": "Relaxation and reflection on the day's events",
+        "place": "Genghis Khan's room at Hotel at The Detroit Club",
+        "building": "The Detroit Club.001",
+        "start_time": "20:00:00",
+        "end_time": "23:59:59"
+    }
+]

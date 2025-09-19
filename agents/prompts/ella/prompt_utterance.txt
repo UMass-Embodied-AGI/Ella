@@ -1,0 +1,36 @@
+Given my character description, knowledge about and experience with $Target_name$, and current situation, help me decide what I should say next.
+
+My Character Description:
+
+$Character$
+
+My knowledge about $Target_name$:
+
+$Target_knowledge$
+
+My experience with $Target_name$:
+
+$Target_experience$
+
+Current Place:
+
+$Place$
+
+Current Time:
+
+$Time$
+
+Current Situation:
+
+$Context$
+
+Current conversation history:
+
+$Conversation_history$
+
+Note: Please generate a short utterance of what I should say next to $Target_name$, which should be null if the conversation should be ended now. Output a JSON object with the following format:
+
+{
+    "utterance": "short utterance of what I should say next to $Target_name$, null if the conversation should be ended now.",
+    "reason": "reason for generating this utterance"
+}

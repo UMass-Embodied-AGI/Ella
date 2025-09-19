@@ -1,0 +1,3 @@
+[submodule "vico"]
+	path = vico
+	url = https://github.com/UMass-Embodied-AGI/Virtual-Community.git

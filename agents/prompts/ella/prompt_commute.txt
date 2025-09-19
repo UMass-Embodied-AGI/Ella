@@ -1,0 +1,41 @@
+Given my character description, current state, time and schedule, and known transit system info, please help me make the best commute plan to $Goal_place$.
+
+My Character Description:
+
+$Character$
+
+Current State:
+
+$State$
+
+Current Time:
+
+$Time$
+
+Current Schedule:
+
+$Schedule$
+
+Known Transit System Info:
+
+$Transit$
+
+Estimated distance from Me to $Goal_place$: $EstimatedDistance1$
+
+Estimated distance from Me to Each Transit Stop:
+
+$EstimatedDistance2$
+
+Estimated distance from Each Transit Stop to $Goal_place$:
+
+$EstimatedDistance3$
+
+Note: There are three types of transit options: take a bus, rent a shared bike, or walk. Each option comes with different time and cost. Shared bike has to be rented and returned at bicycle stations. Please help me choose the best option based on my situation to commute to $Goal_place$. Output the commute plan as a JSON array where each item is a step in the commute plan with the following format:
+
+{
+    "goal_place": "name of the place where the character wants to go, could be a transit stop or a destination",
+    "transit_type": "type of transit, could be 'bus', 'bike', or 'walk'"
+}
+
+Commute Plan:
+
