@@ -10,6 +10,7 @@ import sys
 import os
 current_directory = os.getcwd()
 sys.path.insert(0, current_directory)
+sys.path.insert(0, os.path.join(current_directory, 'vico'))
 
 from vico.tools.utils import atomic_save
 from .builtin import lib_builder

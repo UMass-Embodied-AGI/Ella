@@ -2,15 +2,10 @@ import argparse
 import json
 import os
 import shutil, errno
-import sys
 from datetime import datetime, timedelta
 
 import pathlib
 import genesis as gs
-
-# Set up the current directory
-current_directory = os.getcwd()
-sys.path.insert(0, current_directory)
 
 from vico.env import VicoEnv
 from vico.modules import *
@@ -98,7 +93,7 @@ if __name__ == '__main__':
 	config_path = os.path.join(args.output_dir, 'curr_sim')
 	continued = False
 	if not os.path.exists(config_path):
-		seed_config_path = os.path.join('vico/assets/scenes', args.scene, args.config)
+		seed_config_path = os.path.join(ASSETS_PATH, 'scenes', args.scene, args.config)
 		print(f"Initializing new simulation from config: {seed_config_path}")
 		try:
 			shutil.copytree(seed_config_path, config_path)

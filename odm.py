@@ -6,10 +6,9 @@ import argparse
 import genesis as gs
 import json
 
-current_directory = os.getcwd()
-sys.path.insert(0, current_directory)
 from vico.env import VicoEnv
 from vico.tools.utils import atomic_save, json_converter
+from vico.tools.constants import ASSETS_PATH
 
 
 if __name__ == '__main__':
@@ -74,7 +73,7 @@ if __name__ == '__main__':
 	os.makedirs(args.output_dir, exist_ok=True)
 	config_path = os.path.join(args.output_dir, 'curr_sim')
 	if not os.path.exists(config_path):
-		seed_config_path = os.path.join('vico/assets/scenes', args.scene, args.config)
+		seed_config_path = os.path.join(ASSETS_PATH, 'scenes', args.scene, args.config)
 		print(f"Initiate new simulation from config: {seed_config_path}")
 		try:
 			shutil.copytree(seed_config_path, config_path)

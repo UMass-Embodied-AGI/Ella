@@ -8,11 +8,9 @@ import json
 import math
 import genesis as gs
 
-current_directory = os.getcwd()
-sys.path.insert(0, current_directory)
-
 from vico.env import VicoEnv
 from vico.tools.utils import atomic_save, json_converter
+from vico.tools.constants import ASSETS_PATH
 from agents import AgentProcess, get_agent_cls
 from PIL import Image 
 from tools.model_manager import global_model_manager
@@ -294,7 +292,7 @@ def run():
     os.makedirs(args.output_dir, exist_ok=True)
     config_path = os.path.join(args.output_dir, 'curr_sim')
     if not os.path.exists(config_path):
-        seed_config_path = os.path.join('vico/assets/scenes', args.scene, args.config)
+        seed_config_path = os.path.join(ASSETS_PATH, 'scenes', args.scene, args.config)
         print(f"Seed sim from {seed_config_path}")
         import shutil, errno
         try:

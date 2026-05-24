@@ -1,0 +1,27 @@
+[project]
+name = "ella"
+version = "0.1.0"
+description = "Embodied Social Agents with Lifelong Memory"
+requires-python = "==3.11.*"
+dependencies = [
+    "setuptools",
+    "efficient-sam",
+    "groundingdino",
+    "open-clip-torch",
+    "ram",
+]
+
+[tool.uv.sources]
+efficient-sam = { path = "agents/sg/third_party/EfficientSAM", editable = true }
+groundingdino = { path = "agents/sg/third_party/GroundingDINO", editable = true }
+open-clip-torch = { path = "agents/sg/third_party/open_clip", editable = true }
+ram = { path = "agents/sg/third_party/recognize-anything", editable = true }
+
+[tool.uv]
+environments = [
+    "sys_platform == 'darwin'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
+[tool.uv.workspace]
+members = ["vico"]

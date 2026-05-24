@@ -1,5 +1,4 @@
 import os
-import sys
 import time
 import traceback
 import json
@@ -11,7 +10,6 @@ from PIL import Image
 from dataclasses import dataclass
 from .memory import SemanticMemory, EpisodicMemory
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from vico.agents import Agent
 from vico.tools.utils import *
 

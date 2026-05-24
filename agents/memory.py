@@ -15,7 +15,9 @@ import faiss
 
 from .sg.builder.builder import Builder, BuilderConfig, VolumeGridBuilderConfig
 from .sg.builder.object import Object, AGENT_TAGS
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_ella_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _ella_root)
+sys.path.insert(0, os.path.join(_ella_root, 'vico'))
 from tools.model_manager import global_model_manager
 from vico.tools.utils import atomic_save, json_converter, min_max_normalize_dict, top_highest_x_values
 

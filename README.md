@@ -15,10 +15,12 @@ Project Website: [Ella](https://umass-embodied-agi.github.io/Ella/)
 
 Follow [Virtual Community](https://github.com/UMass-Embodied-AGI/Virtual-Community) documents to install the environments our agents will live.
 
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if you haven't already.
+
 ```bash
-conda env create -f env.yaml
-cd vico/Genesis
-pip install -e .[dev]
+git submodule update --init
+uv sync --all-packages
+source .venv/bin/activate
 cd agents/sg
 ./setup.sh
 ```

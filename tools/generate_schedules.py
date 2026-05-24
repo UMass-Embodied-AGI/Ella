@@ -10,6 +10,7 @@ sys.path.insert(0, current_directory)
 
 from agents.ella import EllaAgent
 from tools.model_manager import global_model_manager
+from vico.tools.constants import ASSETS_PATH
 
 # init logger
 import logging
@@ -38,16 +39,16 @@ parser.add_argument("--lm_source", type=str, default='openai')
 args = parser.parse_args()
 
 if not args.output_dir:
-	args.output_dir = os.path.join("vico/assets/scenes", args.scene, args.config + "_with_schedules")
+	args.output_dir = os.path.join(ASSETS_PATH, "scenes", args.scene, args.config + "_with_schedules")
 	if args.event:
-		args.output_dir = os.path.join("vico/assets/scenes", args.scene, "events", args.event, args.config + "_with_schedules")
+		args.output_dir = os.path.join(ASSETS_PATH, "scenes", args.scene, "events", args.event, args.config + "_with_schedules")
 if args.overwrite and os.path.exists(args.output_dir):
 	print(f"Overwrite the output directory: {args.output_dir}")
 	shutil.rmtree(args.output_dir)
 
-seed_sim_path = f"vico/assets/scenes/{args.scene}/{args.config}"
+seed_sim_path = os.path.join(ASSETS_PATH, "scenes", args.scene, args.config)
 if args.event:
-	seed_sim_path = f"vico/assets/scenes/{args.scene}/events/{args.event}/{args.config}"
+	seed_sim_path = os.path.join(ASSETS_PATH, "scenes", args.scene, "events", args.event, args.config)
 seed_config_path = os.path.join(seed_sim_path, "config.json")
 
 

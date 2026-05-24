@@ -7,18 +7,14 @@ from collections import defaultdict
 import numpy as np
 
 import tqdm
-import sys
-
-current_directory = os.getcwd()
-sys.path.insert(0, current_directory)
-
 from vico.tools.utils import merge_step_files
+from vico.tools.constants import ASSETS_PATH
 
 
 def evaluate_IB(output_path, max_steps=21600):
     config = json.load(open(os.path.join(output_path, "curr_sim", "config.json"), 'r'))
     scene = config["sim_name"].split('_')[0]
-    place_meta = json.load(open(os.path.join("vico", "assets", "scenes", scene, "place_metadata.json"), 'r'))
+    place_meta = json.load(open(os.path.join(ASSETS_PATH, "scenes", scene, "place_metadata.json"), 'r'))
     party_organizer_groups_name = config["party_organizer_groups"]
     party_organizer_groups_place = [config["groups"][group]["place"] for group in party_organizer_groups_name]
     total_conv = defaultdict(int)

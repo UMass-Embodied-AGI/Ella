@@ -11,6 +11,7 @@ from logging import Logger
 from .volume_grid import VolumeGridBuilder, VolumeGridBuilderConfig
 current_directory = os.getcwd()
 sys.path.insert(0, current_directory)
+sys.path.insert(0, os.path.join(current_directory, 'vico'))
 from vico.tools.utils import atomic_save
 
 @dataclass

@@ -4,7 +4,9 @@ from datetime import time
 from tools.model_manager import global_model_manager
 from .sg.builder.object import AGENT_TAGS
 from .gen_agent_memory import SemanticMemory, EpisodicMemory
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_ella_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _ella_root)
+sys.path.insert(0, os.path.join(_ella_root, 'vico'))
 from vico.agents import Agent
 from vico.tools.utils import *
 
