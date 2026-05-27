@@ -11,8 +11,11 @@ from vico.agents import Agent
 from vico.tools.utils import *
 
 class GenAgent(Agent):
-	def __init__(self, name, pose, info, sim_path, no_react=False, debug=False, logger=None, lm_source='azure', lm_id='gpt-4o', max_tokens=4096, temperature=0, top_p=1.0, enable_gt_segmentation=True):
+	def __init__(self, name, pose, info, sim_path, no_react=False, debug=False, logger=None, lm_source='azure', lm_id='gpt-4o', max_tokens=4096, temperature=0, top_p=1.0, enable_gt_segmentation=True,
+				 model_channel=None, model_device=None):
 		super().__init__(name, pose, info, sim_path, no_react, debug, logger)
+		if model_channel is not None:
+			global_model_manager.set_channel(model_channel, model_device)
 		self.lm_source = lm_source
 		self.wake_up_hour = None
 		self.generator = global_model_manager.get_generator(lm_source, lm_id, max_tokens, temperature, top_p, logger)
@@ -620,7 +623,7 @@ class GenAgent(Agent):
 		return self.navigate_helper(self.s_mem.get_sg(self.current_place), self.curr_goal_pos, self.curr_goal_bbox)
 
 	def navigate_helper(self, sg, goal_pos, goal_bbox=None):
-		from tools.utils import get_bbox, get_axis_aligned_bbox
+		from vico.tools.utils import get_bbox, get_axis_aligned_bbox
 		if goal_pos is None:
 			return None
 		cur_trans = np.array(self.pose[:2])

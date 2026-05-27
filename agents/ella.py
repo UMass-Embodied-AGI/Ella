@@ -30,9 +30,12 @@ class Chat:
 
 class EllaAgent(Agent):
 	def __init__(self, name, pose, info, sim_path, no_react=False, debug=False, logger=None,
-				 lm_source='azure', lm_id='gpt-4o', max_tokens=4096, temperature=0, top_p=1.0, detect_interval=1, region_layer=False, enable_indoor_activities=False):
+				 lm_source='azure', lm_id='gpt-4o', max_tokens=4096, temperature=0, top_p=1.0, detect_interval=1, region_layer=False, enable_indoor_activities=False,
+				 model_channel=None, model_device=None):
 		super().__init__(name, pose, info, sim_path, no_react, debug, logger)
 		from tools.model_manager import global_model_manager
+		if model_channel is not None:
+			global_model_manager.set_channel(model_channel, model_device)
 		self.lm_source = lm_source
 		self.detect_interval = detect_interval
 		self.generator = global_model_manager.get_generator(lm_source, lm_id, max_tokens, temperature, top_p, logger)
@@ -734,7 +737,7 @@ class EllaAgent(Agent):
 		return self.last_action
 
 	def navigate(self, sg, goal_pos, goal_bbox=None):
-		from tools.utils import get_bbox, get_axis_aligned_bbox
+		from vico.tools.utils import get_bbox, get_axis_aligned_bbox
 		if goal_pos is None:
 			return None
 		cur_trans = np.array(self.pose[:2])

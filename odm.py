@@ -60,7 +60,7 @@ if __name__ == '__main__':
 	parser.add_argument("--region_layer", action='store_true')
 
 	parser.add_argument("--lm_source", type=str, choices=["openai", "azure", "huggingface", "local"]
-						, default="azure", help="language model source")
+						, default="openai", help="language model source")
 	parser.add_argument("--lm_id", "-lm", type=str, default="gpt-4o", help="language model id")
 
 	args = parser.parse_args()
@@ -146,7 +146,11 @@ if __name__ == '__main__':
 			lm_id=args.lm_id,
 		)
 		agent_cls = get_agent_cls(agent_type=args.agent_type)
-		agents.append(AgentProcess(agent_cls, **basic_kwargs, **llm_kwargs))
+		model_kwargs = {}
+		if "ella" in args.agent_type or "generative_agent" in args.agent_type:
+			model_kwargs = dict(model_channel=global_model_manager._channel,
+								model_device=global_model_manager.device)
+		agents.append(AgentProcess(agent_cls, **basic_kwargs, **llm_kwargs, **model_kwargs))
 
 	if args.multi_process:
 		gs.logger.info("Start agent processes")

@@ -1,10 +1,10 @@
 from vico.agents import AgentProcess
 
 def get_agent_cls(agent_type, robot_type=None):
-    if agent_type == 'ella':
+    if 'ella' in agent_type:
         from .ella import EllaAgent
         return EllaAgent
-    if agent_type == 'generative_agent':
+    if 'generative_agent' in agent_type:
         from .gen_agent import GenAgent
         return GenAgent
     # Fall back to vico's built-in agent types
