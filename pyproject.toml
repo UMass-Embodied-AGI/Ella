@@ -25,3 +25,14 @@ environments = [
 
 [tool.uv.workspace]
 members = ["vico"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = [
+    "integration: requires real model weights and a running ModelProcess (deselect with -m 'not integration')",
+]

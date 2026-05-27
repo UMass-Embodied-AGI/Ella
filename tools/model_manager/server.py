@@ -61,18 +61,26 @@ class ProcessChannel:
             self.cond_c.notify_all()
     
     def get_s(self, model_subset=None): # return url, [(id, val), ...]
+        import queue
         with self.cond_s:
             while True:
                 for url, q in self.input.items():
                     if model_subset is not None and all([m not in url for m in model_subset]):
                         continue
-                    bs = min(4, q.qsize())
-                    if bs > 0:
-                        if url in self.UNBATCHED:
-                            return url, q.get()
-                        vals = [q.get() for _ in range(bs)]
-                        return url, vals
-                self.cond_s.wait()
+                    try:
+                        first = q.get_nowait()
+                    except queue.Empty:
+                        continue
+                    if url in self.UNBATCHED:
+                        return url, first
+                    vals = [first]
+                    for _ in range(3):
+                        try:
+                            vals.append(q.get_nowait())
+                        except queue.Empty:
+                            break
+                    return url, vals
+                self.cond_s.wait(timeout=1.0)
 
     def put_c(self, id, url, val):
         self.input[url].put((id, val))
@@ -82,8 +90,17 @@ class ProcessChannel:
     def get_c(self, id):
         with self.cond_c:
             while id not in self.output:
-                self.cond_c.wait()
+                self.cond_c.wait(timeout=1.0)
             return self.output.pop(id)
+
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        del state['_manager']
+        return state
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
+        self._manager = None
 
     def shutdown(self):
         # best-effort cleanup of queues and manager resources
@@ -106,28 +123,31 @@ class ProcessChannel:
             pass
 
 class ModelProcess(mp.Process):
-    def __init__(self, channel: ProcessChannel, cuda_devices=[0], model_subset: list=None):
+    def __init__(self, channel: ProcessChannel, cuda_devices=[0], model_subset: list=None, device: str=None):
         super().__init__()
         self.cuda_devices = cuda_devices
         self.channel = channel
         self.model_subset = model_subset
         self.models = None
+        # explicit device overrides the cuda_devices-derived default
+        self._device_override = device
 
     def _load_model(self, model_name):
         if self.model_subset is not None and model_name not in self.model_subset:
             return None
+        device = self._device_override or ("cuda" if self.cuda_devices else "cpu")
         if model_name == "ram":
             from agents.sg.builder.model import RAMWrapper
-            return RAMWrapper()
+            return RAMWrapper(device=device)
         if model_name == "dino":
             from agents.sg.builder.model import DINOWrapper
-            return DINOWrapper()
+            return DINOWrapper(device=device)
         if model_name == "sam":
             from agents.sg.builder.model import SAMWrapper
-            return SAMWrapper()
+            return SAMWrapper(device=device)
         if model_name == "clip":
             from agents.sg.builder.model import CLIPWrapper
-            return CLIPWrapper()
+            return CLIPWrapper(device=device)
         if model_name == "embedding":
             from vllm import LLM
             return LLM(model="BAAI/bge-base-en-v1.5")
@@ -137,7 +157,13 @@ class ModelProcess(mp.Process):
         raise ValueError(f"unknown model: {model_name}")
 
     def init(self):
-        os.environ["CUDA_VISIBLE_DEVICES"] = ",".join([str(d) for d in self.cuda_devices])
+        if self._device_override and not self._device_override.startswith("cuda"):
+            # MPS or CPU: don't touch CUDA_VISIBLE_DEVICES
+            pass
+        elif self.cuda_devices:
+            os.environ["CUDA_VISIBLE_DEVICES"] = ",".join([str(d) for d in self.cuda_devices])
+        else:
+            os.environ["CUDA_VISIBLE_DEVICES"] = ""
         self.models = {}
 
         self.logger = logging.Logger("model_server")

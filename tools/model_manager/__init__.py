@@ -6,43 +6,55 @@ from .client import *
 from ..generator import Generator
 
 class ModelManager:
-    def __init__(self, device='cuda', port=8000, local=False):
+    def __init__(self, device=None, port=8000, local=False):
         self.models = {}
         self._channel = None
         self._processes = []
         self.init(device, port, local)
 
-    def init(self, device='cuda', port=8000, local=False):
+    def init(self, device=None, port=8000, local=False):
+        if device is None:
+            if torch.cuda.is_available():
+                device = 'cuda'
+            elif torch.backends.mps.is_available():
+                device = 'mps'
+            else:
+                device = 'cpu'
         self.device = device
         channel = None
         processes = []
         if local:
+            if device.startswith("mps"):
+                os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
             channel = ProcessChannel()
             if "CUDA_VISIBLE_DEVICES" in os.environ:
-                cuda_devices = os.environ["CUDA_VISIBLE_DEVICES"].split(",")
+                cuda_devices = [d for d in os.environ["CUDA_VISIBLE_DEVICES"].split(",") if d]
             else:
                 cuda_devices = list(range(torch.cuda.device_count()))
             dc = len(cuda_devices)
             if dc < 1:
-                print("no CUDA devices available! do not start model process.")
-                return
-            # for smem models
-            if dc > 1:
-                process = ModelProcess(channel, cuda_devices=[cuda_devices[1]], model_subset=["ram", "dino", "sam", "clip", "embedding"])
+                print(f"no CUDA devices available! starting model process in {device.upper()} mode.")
+                process = ModelProcess(channel, cuda_devices=[], model_subset=["ram", "dino", "sam", "clip"], device=device)
+                process.start()
+                processes.append(process)
             else:
-                process = ModelProcess(channel, cuda_devices=[cuda_devices[0]], model_subset=["ram", "dino", "sam", "clip", "embedding"])
-            process.start()
-            processes.append(process)
-            
-            # for llms
-            if dc >= 6:
-                process = ModelProcess(channel, cuda_devices=cuda_devices[2:6], model_subset=["completion"])
-            elif dc > 2:
-                process = ModelProcess(channel, cuda_devices=cuda_devices[2:min(4,dc)], model_subset=["completion"])
-            else:
-                process = ModelProcess(channel, cuda_devices=[cuda_devices[0]], model_subset=["completion"])
-            process.start()
-            processes.append(process)
+                # for smem models
+                if dc > 1:
+                    process = ModelProcess(channel, cuda_devices=[cuda_devices[1]], model_subset=["ram", "dino", "sam", "clip", "embedding"])
+                else:
+                    process = ModelProcess(channel, cuda_devices=[cuda_devices[0]], model_subset=["ram", "dino", "sam", "clip", "embedding"])
+                process.start()
+                processes.append(process)
+
+                # for llms
+                if dc >= 6:
+                    process = ModelProcess(channel, cuda_devices=cuda_devices[2:6], model_subset=["completion"])
+                elif dc > 2:
+                    process = ModelProcess(channel, cuda_devices=cuda_devices[2:min(4,dc)], model_subset=["completion"])
+                else:
+                    process = ModelProcess(channel, cuda_devices=[cuda_devices[0]], model_subset=["completion"])
+                process.start()
+                processes.append(process)
         
         self.models = {
             "ram": RAMClient(device, port, channel),
@@ -55,6 +67,16 @@ class ModelManager:
         self._channel = channel
         self._processes = processes
     
+    def set_channel(self, channel, device=None):
+        if device is not None:
+            self.device = device
+        self._channel = channel
+        for client in self.models.values():
+            if hasattr(client, "server_channel"):
+                client.server_channel = channel
+                if device is not None:
+                    client.device = device
+
     def get_model(self, model_name):
         if model_name not in self.models:
             raise ValueError(f"unknown model: {model_name}")

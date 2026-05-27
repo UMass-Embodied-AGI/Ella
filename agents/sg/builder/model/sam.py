@@ -37,7 +37,7 @@ class SAMWrapper:
         if not annotate:
             return masks
         else:
-            ann = rgb[None].repeat(masks.shape[0], axis=0).astype(np.float64)
-            ann[~masks] += (255 - ann[~masks]) / 2
-            ann = ann.astype(np.uint8)
-            return masks, ann
+            ann = rgb.copy().astype(np.float64)
+            unmasked = ~masks.any(axis=0)
+            ann[unmasked] += (255 - ann[unmasked]) / 2
+            return masks, ann.astype(np.uint8)

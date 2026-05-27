@@ -226,7 +226,7 @@ class ObjectBuilder:
             Image.fromarray(annotate).save(os.path.join(self.output_path, "debug", f"{self.num_frames:06d}_dino.png"))
             if boxes.shape[0] > 0:
                 masks, annotate = self.sam.predict(rgb, boxes, annotate=True)
-                Image.fromarray(annotate.transpose(1, 0, 2, 3).reshape(rgb.shape[0], -1, 3)).save(os.path.join(self.output_path, "debug", f"{self.num_frames:06d}_sam.png"))
+                Image.fromarray(annotate).save(os.path.join(self.output_path, "debug", f"{self.num_frames:06d}_sam.png"))
         else:
             start = time.time()
             boxes, box_tags = self.dino.predict(rgb, tags)
@@ -441,7 +441,7 @@ class ObjectBuilder:
             Image.fromarray(annotate).save(os.path.join(self.output_path, "debug", f"{self.num_frames:06d}_dino.png"))
             if boxes.shape[0] > 0:
                 masks, annotate = self.sam.predict(rgb, boxes, annotate=True)
-                Image.fromarray(annotate.transpose(1, 0, 2, 3).reshape(rgb.shape[0], -1, 3)).save(os.path.join(self.output_path, "debug", f"{self.num_frames:06d}_sam.png"))
+                Image.fromarray(annotate).save(os.path.join(self.output_path, "debug", f"{self.num_frames:06d}_sam.png"))
         else:
             start = time.time()
             boxes, box_tags = self.dino.predict(rgb, tags)
