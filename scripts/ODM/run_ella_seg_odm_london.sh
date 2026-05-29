@@ -1,4 +1,4 @@
-python ViCo/env.py --head_less \
+python odm.py --head_less \
 --multi_process \
 --skip_avatar_animation \
 --enable_gt_segmentation \

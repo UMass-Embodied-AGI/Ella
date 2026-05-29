@@ -1,6 +1,7 @@
-python ViCo/env.py --head_less \
---multi_process \
+python odm.py --head_less \
+--backend cpu \
 --skip_avatar_animation \
+--multi_process \
 --enable_gt_segmentation \
 --output_dir output/odm \
 --scene NY \
@@ -10,5 +11,5 @@ python ViCo/env.py --head_less \
 --config agents_num_15 \
 --agent_type ella_seg \
 --max_seconds 32400 \
---save_per_seconds 10 \
+--save_per_seconds 2 \
 --lm_id gpt-4o
