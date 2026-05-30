@@ -8,16 +8,12 @@ import time
 import numpy as np
 import pickle
 import json
-import sys
 from datetime import datetime, timedelta
 from bisect import bisect_left, bisect_right
 import faiss
 
 from .sg.builder.builder import Builder, BuilderConfig, VolumeGridBuilderConfig
 from .sg.builder.object import Object, AGENT_TAGS
-_ella_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, _ella_root)
-sys.path.insert(0, os.path.join(_ella_root, 'vico'))
 from tools.model_manager import global_model_manager
 from vico.tools.utils import atomic_save, json_converter, min_max_normalize_dict, top_highest_x_values
 
@@ -469,7 +465,7 @@ class EpisodicMemory:
 	def extract_recency(self):
 		recency_decay = 0.995
 		events = [[event.event_last_access_time, event] for event in self.experience]
-		events = sorted(events, key=lambda x: x[0])
+		events = sorted(events, key=lambda x: x[0], reverse=True)  # most recent first
 		events = [event for _, event in events]
 		recency_vals = [recency_decay ** i for i in range(1, len(events) + 1)]
 		recency_out = dict()
