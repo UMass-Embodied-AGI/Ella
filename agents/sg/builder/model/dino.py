@@ -6,7 +6,6 @@ import torchvision.transforms as TS
 from torchvision.ops import box_convert
 from PIL import Image
 
-from groundingdino.util.inference import load_model, annotate as annotate_func
 from .utils import check_download_to, get_device_type
 
 def box_area(boxes: np.ndarray) -> np.ndarray:
@@ -55,6 +54,8 @@ def _remove_overlap_bboxes(bboxes: np.ndarray) -> np.ndarray:
 
 class DINOWrapper:
     def __init__(self, device='cuda', ckpt_path="agents/sg/third_party/GroundingDINO/weights/groundingdino_swinb_cogcoor.pth", box_threshold=0.4):
+        from groundingdino.util.inference import load_model, annotate as annotate_func
+        self._annotate_func = annotate_func
         self.device = device
         self.ckpt_path = ckpt_path
         check_download_to("https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth", self.ckpt_path)
@@ -104,7 +105,7 @@ class DINOWrapper:
             if not annotate:
                 ret.append((boxes, phrases))
             else:
-                ret.append((boxes, phrases, annotate_func(rgb[i], prediction_boxes[i][mask], logits.max(dim=1)[0], phrases)))
+                ret.append((boxes, phrases, self._annotate_func(rgb[i], prediction_boxes[i][mask], logits.max(dim=1)[0], phrases)))
         if unbatched:
             return ret[0]
         return ret

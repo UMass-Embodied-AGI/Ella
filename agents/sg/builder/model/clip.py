@@ -1,12 +1,12 @@
 from typing import List, overload, Union
 import numpy as np
 import torch
-import open_clip
 from PIL import Image
 from itertools import chain
 
 class CLIPWrapper:
     def __init__(self, device='cuda', model="ViT-B-32-256", tag="datacomp_s34b_b86k"):
+        import open_clip
         self.device = device
         self.model, _, self.transform = open_clip.create_model_and_transforms(model, tag)
         self.model = self.model.to(device)

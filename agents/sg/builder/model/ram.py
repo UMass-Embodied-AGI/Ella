@@ -5,12 +5,11 @@ import torchvision.transforms as TS
 from PIL import Image
 import time
 
-from ram import inference_ram, inference_tag2text
-from ram.models import ram, ram_plus
 from .utils import check_download_to, get_device_type
 
 class RAMWrapper:
     def __init__(self, device='cuda', ckpt_path="agents/sg/third_party/recognize-anything/weights/ram_plus_swin_large_14m.pth"):
+        from ram.models import ram_plus
         self.device = device
         self.ckpt_path = ckpt_path
         check_download_to("https://huggingface.co/xinyu1205/recognize-anything-plus-model/resolve/main/ram_plus_swin_large_14m.pth", self.ckpt_path)
