@@ -4,10 +4,6 @@ from PIL import Image
 import json
 import os
 import pickle
-import sys
-
-current_directory = os.getcwd()
-sys.path.insert(0, current_directory)
 from agents.sg.builder.model.clip import CLIPWrapper
 from vico.tools.constants import ASSETS_PATH
 

@@ -1,6 +1,4 @@
 import os
-import sys
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from agents.ella import EllaAgent
 from tools.model_manager import global_model_manager
 
