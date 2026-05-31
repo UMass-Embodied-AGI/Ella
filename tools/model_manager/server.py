@@ -8,6 +8,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import multiprocessing as mp
 import os
 
+_ctx = mp.get_context('spawn')
+
 def auto_batched(args: list):
     def batch_one(arg):
         if isinstance(arg[0], bool):
@@ -38,19 +40,19 @@ class ModelServerHandler(BaseHTTPRequestHandler):
 class ProcessChannel:
     UNBATCHED = ["/sam", "/clip/image"]
     def __init__(self):
-        self._manager = mp.Manager()
+        self._manager = _ctx.Manager()
         self.input = {
-            "/ram": mp.Queue(),
-            "/dino": mp.Queue(),
-            "/sam": mp.Queue(),
-            "/clip/image": mp.Queue(),
-            "/clip/text": mp.Queue(),
-            "/embedding": mp.Queue(),
-            "/completion": mp.Queue(),
+            "/ram": _ctx.Queue(),
+            "/dino": _ctx.Queue(),
+            "/sam": _ctx.Queue(),
+            "/clip/image": _ctx.Queue(),
+            "/clip/text": _ctx.Queue(),
+            "/embedding": _ctx.Queue(),
+            "/completion": _ctx.Queue(),
         }
         self.output = self._manager.dict()
-        self.cond_c = mp.Condition()
-        self.cond_s = mp.Condition()
+        self.cond_c = _ctx.Condition()
+        self.cond_s = _ctx.Condition()
     
     def put_s(self, vals): # vals: [(id, val), ...]
         if not isinstance(vals, list):
@@ -122,7 +124,7 @@ class ProcessChannel:
         except Exception:
             pass
 
-class ModelProcess(mp.Process):
+class ModelProcess(_ctx.Process):
     def __init__(self, channel: ProcessChannel, cuda_devices=[0], model_subset: list=None, device: str=None):
         super().__init__()
         self.cuda_devices = cuda_devices
