@@ -1,8 +1,8 @@
-# Ella: Embodied Social Agents with Lifelong Memory
+# Ella: Building Embodied Social Agents with Non-Parametric Memory
 
 This repo contains codes for the following paper:
 
-_Hongxin Zhang*, Zheyuan Zhang*, Zeyuan Wang*, Zunzhe Zhang, Lixing Fang, Qinhong Zhou, Chuang Gan_: Ella: Embodied Lifelong Learning Agents with Non-Parametric Memory
+_Hongxin Zhang*, Zheyuan Zhang*, Zeyuan Wang*, Zunzhe Zhang, Lixing Fang, Qinhong Zhou, Chuang Gan_: Building Embodied Social Agents with Non-Parametric Memory
 
 Paper: [Arxiv](https://arxiv.org/abs/2506.24019)
 
@@ -38,7 +38,7 @@ For example, to run experiments with _Ella_ for one day in New York City,
 ./scripts/ODM/run_ella_odm_newyork.sh
 ```
 
-To test _Ella_ with Influence Battle Final,
+To test _Ella_ in the Influence Battle controlled evaluation,
 
 ```
 ./scripts/IB/test_IB_ella_newyork.sh
